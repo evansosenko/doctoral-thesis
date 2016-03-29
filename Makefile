@@ -1,6 +1,6 @@
 # Build Environment
-LATEX_INPUT = makenew-latex-project
-LATEX_OUTPUT = "Make-New-LaTeX-Project"
+LATEX_INPUT = doctoral-thesis
+LATEX_OUTPUT = "doctoral-thesis"
 LATEX_OUTPUT_EXT = pdf
 LATEX_SRC = tex
 LATEX_BULD = build

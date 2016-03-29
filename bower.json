@@ -1,8 +1,8 @@
 {
-  "name": "makenew-latex-project",
+  "name": "doctoral-thesis",
   "version": "0.0.0",
-  "description": "LaTeX project skeleton.",
-  "main": "tex/makenew-latex-project.tex",
+  "description": "Spin and valley physics in two dimensional systems: Graphene and superconducting transition metal dichalcogenides.",
+  "main": "tex/doctoral-thesis.tex",
   "authors": [
     "Evan Sosenko <razorx@evansosenko.com>"
   ],
@@ -10,10 +10,10 @@
     "latex"
   ],
   "license": "Copyright 2016 Evan Sosenko",
-  "homepage": "https://github.com/makenew/latex-project",
+  "homepage": "https://github.com/evansosenko/doctoral-thesis",
   "repository": {
     "type": "git",
-    "url": "git://github.com/makenew/latex-project.git"
+    "url": "git://github.com/evansosenko/doctoral-thesis.git"
   },
   "private": true,
   "ignore": [
@@ -21,7 +21,6 @@
     "node_modules",
     "tex/components",
     "build",
-    "makenew.sh",
     "package.json"
   ]
 }
