@@ -1,0 +1,33 @@
+% Set double spacing.
+\DoubleSpacing{}
+
+% Set paragraph indent to match spacing.
+\setlength{\parindent}{2em}
+
+% Force footnotes to use body text.
+\renewcommand*{\foottextfont}{\normalfont\normalsize}
+
+% Set left and right margins.
+\setlrmarginsandblock{1.5in}{1in}{*}
+
+% Set upper and lower margins.
+\setlength{\uppermargin}{1.5in}
+\setlength{\lowermargin}{1in}
+\newlength{\linespace}
+\setlength{\linespace}{\baselineskip}
+\setlength{\headheight}{\onelineskip}
+\setlength{\headsep}{\linespace}
+\addtolength{\headsep}{-\topskip}
+\addtolength{\uppermargin}{\headheight}
+\addtolength{\uppermargin}{\headsep}
+\setlength{\textheight}{\paperheight}
+\addtolength{\textheight}{-\uppermargin}
+\addtolength{\textheight}{-\lowermargin}
+
+% Apply the new layout.
+\checkandfixthelayout[nearest]
+
+\makepagestyle{thesis}
+\makeevenhead{thesis}{}{}{}
+\makeoddhead{thesis}{}{}{}
+\makeoddfoot{thesis}{}{\thepage}{}
