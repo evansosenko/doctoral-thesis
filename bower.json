@@ -22,5 +22,8 @@
     "tex/components",
     "build",
     "package.json"
-  ]
+  ],
+  "dependencies": {
+    "references": "https://github.com/razor-x/references.git"
+  }
 }
