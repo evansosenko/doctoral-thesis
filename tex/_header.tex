@@ -1,6 +1,50 @@
+% Provide fallback for \symbf.
+\providecommand{\symbf}{\mathbf}
+
+% Load fontspec.
+\usepackage{fontspec}
+
+% Typography optimizations.
+\usepackage[english]{babel}
+\usepackage{microtype}
+
+% Core math packages.
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+% UTF-8 math support
+\usepackage{unicode-math}
+
+% PDF bookmarks.
+\usepackage[hidelinks,colorlinks]{hyperref}
+
+% Enables the \cref command.
+\usepackage[noabbrev]{cleveref}
+
+% Required for frontmatter layout.
 \usepackage{ragged2e}
 
+% Use biber and biblatex for references.
 \usepackage[
   style=phys,
   backend=biber
 ]{biblatex}
+
+% For graphics.
+\usepackage{graphicx}
+
+% For units.
+\usepackage{siunitx}
+
+% For derivatives and other math commands.
+\usepackage{cool}
+
+% Chemical formulas.
+\usepackage[version=3]{mhchem}
+
+% For Bra-Ket.
+\usepackage{braket}
+
+% Use serial comma with cleveref.
+\newcommand{\creflastconjunction}{, and\nobreakspace}
