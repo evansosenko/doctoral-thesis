@@ -1,0 +1,421 @@
+\section{Appendix}
+
+In this appendix we derive an expression for
+the nonlocal resistance for finite contact resistance.
+We first present the key definitions and critical boundary conditions.
+We then derive the relation between the nonlocal resistance
+and the spin chemical potential at the far contact, $μ_s^N (L)$.
+Finally, we solve the diffusion equation inside the semiconductor to find $μ_s^N (L)$.
+
+\subsection{Definitions}
+
+Many of the definitions and results in this section are taken from
+\cite{ActaPhysicaSlovaca.57.4_5.565-907}.
+The chemical potential and spin chemical potential are defined in terms
+of the spin-up and spin-down chemical potentials,
+\begin{subequations}
+  \label{eq:potentials}
+  \begin{alignat}{2}
+    & μ   && = \frac{1}{2} \left( μ_↑ + μ_↓ \right) , \\
+    & μ_s && = \frac{1}{2} \left( μ_↑ - μ_↓ \right) .
+  \end{alignat}
+\end{subequations}
+The material conductances and polarization are defined in terms
+of the spin-up and spin-down conductances,
+\begin{subequations}
+  \label{eq:conductances}
+  \begin{alignat}{2}
+    & σ   && = σ_↑ + σ_↓ , \\
+    & σ_s && = σ_↑ - σ_↓ , \\
+    %
+    \label{eq:material.polarization}
+    & P_σ && = \frac{σ_s}{σ} .
+  \end{alignat}
+\end{subequations}
+The gradient of the chemical potentials drives a current and spin current,
+\begin{subequations}
+  \label{eq:currents}
+  \begin{alignat}{3}
+    & J_{↑↓} && = σ_{↑↓} ∇μ_{↑↓} , \\
+    %
+    \label{eq:currents.current}
+    & J      && = J_↑ + J_↓ & = σ   ∇μ + σ_s ∇μ_s , \\
+    %
+    \label{eq:currents.spincurrent}
+    & J_s    && = J_↑ - J_↓ & = σ_s ∇μ + σ   ∇μ_s .
+  \end{alignat}
+\end{subequations}
+To indicate the material, any of the above can have a superscript
+$N$ (normal semiconductor) or $F$ (ferromagnet).
+
+The contact conductances and polarization are defined in terms
+of the spin-up and spin-down contact conductances,
+\begin{subequations}
+  \label{eq:contact_conductances}
+  \begin{alignat}{2}
+    & Σ   && = Σ_↑ + Σ_↓ , \\
+    & Σ_s && = Σ_↑ - Σ_↓ , \\
+    %
+    \label{eq:contact.polarization}
+    & P_Σ && = \frac{Σ_s}{Σ} .
+  \end{alignat}
+\end{subequations}
+The mismatch of the chemical potentials across the contact
+drives a current and spin current,
+\begin{subequations}
+  \label{eq:contact_currents}
+  \begin{alignat}{2}
+    & J_{↑↓}^C && = Σ_{↑↓} \left( μ^N_{↑↓} - μ^F_{↑↓} \right)_c , \\
+    %
+    & J^C      && = J_↑^C + J_↓^C , \\
+    & J_s^C    && = J_↑^C - J_↓^C .
+  \end{alignat}
+\end{subequations}
+The subscript $c$ will always denote the function evaluated at the contact.
+
+We will use the term current to refer to $J$,
+when in fact this is a particle current density.
+For constant $J$, the physical charge current $I$ will be related to $J$
+by a relation $I = - A J / e$ for some characteristic area $A$.
+
+To reduce the number of subscripts and superscripts in the following,
+we adopt the notation for the potentials
+\begin{subequations}
+  \begin{equation}
+    \begin{aligned}
+    & \begin{alignedat}{2}
+        & u && = μ^N_s , \\
+        & v && = μ^N   ,
+      \end{alignedat}
+    & \begin{alignedat}{2}
+        & φ && = μ^F_s , \\
+        & ψ && = μ^F   ,
+      \end{alignedat}
+    \end{aligned}
+  \end{equation}
+  and currents
+  \begin{equation}
+    \begin{alignedat}{2}
+      & ȷ   && = J_s   , \\
+      & J_c && = J^C   , \\
+      & ȷ_c && = J_s^C .
+    \end{alignedat}
+  \end{equation}
+\end{subequations}
+
+We rewrite \cref{eq:contact_currents} as
+\begin{subequations}
+  \label{eq:contact_currents.2}
+  \begin{alignat}{3}
+    \label{eq:contact_currents.2.current}
+    & J_c && = Σ   \left( v_c - ψ_c \right) && + Σ_s \left( u_c - φ_c \right) , \\
+    %
+    \label{eq:contact_currents.2.spincurrent}
+    & ȷ_c && = Σ_s \left( v_c - ψ_c \right) && + Σ   \left( u_c - φ_c \right) ,
+  \end{alignat}
+\end{subequations}
+and \cref{eq:conductances,eq:currents} as
+\begin{equation}
+  \label{eq:bdry_current}
+  ȷ = P_σ J + 4 \frac{σ_↑ σ_↓}{σ} ∇μ_s .
+\end{equation}
+
+Using \cref{eq:contact_conductances,eq:contact_currents.2},
+\begin{equation}
+  \label{eq:bdry_current_contact}
+  ȷ_c = P_Σ^i J_c + {R_C^i}^{-1} \left( u_c - φ_c \right) ,
+\end{equation}
+where the contact resistance is
+\begin{equation}
+  \label{eq:contact.resistance}
+  R_C^i = \frac{Σ^i}{4 Σ_↑^i Σ_↓^i} .
+\end{equation}
+The superscript $i$ allows for contacts with difference conductances.
+
+\subsection{Boundary conditions}
+
+In this sections, we derive the relations between the potentials and the currents
+This corresponds to the needed boundary conditions.
+
+\subsubsection{Semiconductor}
+
+For the semiconductor, $σ^N_↑ = σ^N_↓ = σ^N / 2$, so $P_σ^N = 0$.
+Evaluating \cref{eq:bdry_current} at the contact gives
+\begin{equation}
+  \label{eq:bdry_current.semiconductor}
+  ȷ^N_c = σ^N ( ∇u )_c .
+\end{equation}
+
+\subsubsection{Ferromagnet}
+
+For the ferromagnet, one assumes $μ_s^F$ satisfies
+the one dimensional diffusion equation.
+We choose the $z'$ coordinate antiparallel to $z$ with origin at the contact.
+The equation
+\begin{equation}
+  \label{eq:diffusion.ferromagnet}
+  φ'' \left( z' \right) - k_F^2 φ \left( z' \right) = 0 ,
+\end{equation}
+with the boundary condition
+$\lim_{z' → - ∞} φ(z') = 0$
+has solution
+\begin{equation}
+  \label{eq:diffusion.ferromagnet.solution}
+  φ(z') = φ_c e^{k_F z'} ,
+\end{equation}
+where $φ_c = φ(0)$ is a yet undetermined constant.
+Putting this into \cref{eq:bdry_current} and evaluating it at the contact gives
+\begin{equation}
+  \label{eq:bdry_current.ferromagnet}
+  ȷ^F_c = P_σ^F J^F_c + R_F^{-1} φ_c ,
+\end{equation}
+where the ferromagnet resistance is
+\begin{equation}
+  \label{eq:ferromagnet.resistance}
+  R_F = \frac{σ^F}{ 4 σ_↑^F σ_↓^F k_F } .
+\end{equation}
+Here, $λ_F = 1 / k_F$ is the spin diffusion length in the ferromagnet.
+
+\subsubsection{Continuity assumptions}
+
+At the contact, the current and spin current are assumed continuous,
+\begin{subequations}
+  \label{eq:continuity.current}
+  \begin{alignat}{3}
+    & J_c && = J^F_c && = J^N_c , \\
+    & ȷ_c && = ȷ^F_c && = ȷ^N_c .
+  \end{alignat}
+\end{subequations}
+Using \cref{eq:bdry_current.ferromagnet,eq:bdry_current_contact,eq:continuity.current}
+we find the relation
+\begin{subequations}
+  \label{eq:bdry_solutions}
+  \begin{equation}
+    \label{eq:bdry_solutions.current}
+    \left( P_σ^F R_F + P_Σ^i R_C^i \right) J_c = \left( R_F + R_C^i \right) ȷ_c - u_c ,
+  \end{equation}
+  and that $φ_c$ is determined by
+  \begin{equation}
+    \label{eq:bdry_solutions.potential}
+    R_F^{-1} φ_c = \frac{ \left( P_Σ^i - P_σ^F \right) R_C^i ȷ_c + P_σ^F u_c}{P_σ^F R_F + P_Σ^i R_C^i} .
+  \end{equation}
+\end{subequations}
+In the special case of zero current at the contact ($J_c = 0$),
+\cref{eq:bdry_solutions} reduces to
+\begin{subequations}
+  \label{eq:bdry_solutions.zero}
+  \begin{alignat}{2}
+    \label{eq:bdry_solutions.zero.current}
+    & ȷ_c && = \frac{1}{R_F + R_C^i} u_c   , \\
+    %
+    \label{eq:bdry_solutions.zero.potential}
+    & φ_c && = \frac{R_F}{R_F + R_C^i} u_c .
+  \end{alignat}
+\end{subequations}
+
+\subsection{Nonlocal resistance}
+\label{s:appendix:nonlocal_resistance}
+
+In this section we derive the precise relation between $\rNL$ and $μ_s^N (L)$.
+Note that we may write in general, for some $\bar{μ}$,
+\begin{equation}
+  μ = \bar{μ} + P_σ μ_s ,
+\end{equation}
+and, following
+\cite{PhysRevB.67.052409},
+define the voltage due to the difference in the chemical potentials across the contacts by
+\begin{equation}
+  V_c = \left( \bar{μ}_c^N - \bar{μ}_c^F \right) / e.
+\end{equation}
+
+We assume a fixed current $J_0 = \abs{J_0} > 0$
+flows down through the contact at $x = 0$
+and to the left in the semiconductor for $x ≤ 0$,
+and no current flows for $x > 0$.
+The experimentally measured quantity is the
+nonlocal resistance $\rNL = V_L / I_0$,
+where $I_0 = - W L J_0 / e$ is the current through the contact at $x = 0$.
+It is convenient to introduce the effective nonlocal resistance $\rNLeff$
+defined by
+\begin{equation}
+  \rNLeff = W L \rNL = - e V_L / J_0 = \frac{\bar{μ}_c^F - \bar{μ}_c^N}{J_0} .
+\end{equation}
+To determine $\rNL$, we must express the difference
+of these chemical potentials in terms of $μ_s^N (L)$.
+
+Since there are two ferromagnetic contacts,
+we have separate functions $ψ$ and $φ$ for each contact
+which we will denote by $ψ^0$, $φ^0$, and $ψ^L$, $φ^L$.
+From \cref{eq:diffusion.ferromagnet.solution}, we have
+\begin{subequations}
+  \begin{align}
+    φ^0 \left( z' \right) & = φ_0 e^{k_F z'} , \\
+    φ^L \left( z' \right) & = φ_L e^{k_F z'} .
+  \end{align}
+\end{subequations}
+
+The physical restriction on the current flow in the semiconductor
+is imposed by noting that since $σ_s^N = 0$,
+\cref{eq:currents.current} gives $J^N = σ^N ∇v$, so we must have
+\begin{equation}
+  v_x (x) =
+    \begin{cases}
+      v_x (0) - \left( J_0 / σ^N \right) x & \text{ for } x ≤ 0 , \\
+      v_x (0)                              & \text{ for } x > 0 ,
+    \end{cases}
+\end{equation}
+$v_y (x) = v_y (0)$, and $v_z (x) = v_z (0)$.
+
+Using \cref{eq:currents.current},
+the restriction on the current flow in each ferromagnet gives
+\begin{subequations}
+  \begin{align}
+    ∇ψ^0 & = \left( J_0 / σ^F \right) - P_σ^F ∇φ^0 , \\
+    ∇ψ^L & = - P_σ^F ∇φ^L .
+  \end{align}
+\end{subequations}
+Integrating and enforcing
+$e V_c = v_x (0) - \left( ψ_c - P_σ^F φ_c \right)$,
+\begin{subequations}
+  \begin{align}
+    & \begin{aligned}
+        ψ^0 \left( z' \right) & = - e V_0 + P_σ^F φ_0 \left( 2 - e^{k_F z'} \right) \\
+                              & \qquad + v_x (0) + \left( J_0 / σ^F \right) z' ,
+      \end{aligned} \\
+    & \begin{aligned}
+        ψ^L \left( z' \right) & = - e V_L + P_σ^F φ_L \left( 2 - e^{k_F z'} \right) \\
+                              & \qquad + v_x (0) .
+      \end{aligned}
+  \end{align}
+\end{subequations}
+
+There is no current at the contact at $x = 0$,
+thus \cref{eq:contact_currents.2.current} gives
+\begin{equation}
+  ψ_L - v_L = P_Σ^L \left( u_L - φ_L \right) ,
+\end{equation}
+and with
+\cref{eq:bdry_solutions.zero.potential},
+we find
+\begin{equation}
+  \label{eq:rnl.full}
+  \begin{aligned}
+    \rNLeff & = \left( ψ_L - v_L \right) - P_σ^F φ_L \\
+            & = \left[ P_Σ^L \left( 1 - \frac{R_F}{R_F + R_C^L} \right) - \frac{P_σ^F R_F}{R_F + R_C^L} \right] \frac{u_x (L)}{J_0} .
+  \end{aligned}
+\end{equation}
+
+\subsection{Diffusion equation}
+
+In this section we show how to solve for $μ_s^N (L)$.
+This method is based on the one described in
+\cite{PhysRevB.80.214427}.
+Inside the semiconductor, $u$ satisfies the diffusion equation
+\begin{equation}
+  \label{eq:diffusion}
+  D ∇^2 u - \frac{u}{τ} + ω × u = 0 .
+\end{equation}
+Here, $D$ is the diffusion constant, $τ$ the spin lifetime,
+and $ω = \left( g μ_B / ℏ \right) B$ is proportional to the applied magnetic field
+(with $g$ the gyromagnetic ratio and $μ_B$ the Bohr magneton).
+The spin diffusion length in the semiconductor is $λ = 1 / k = \sqrt{D τ}$.
+
+The function $u = u(x)$ only varies along $x$,
+and we introduce the notation
+\begin{equation}
+  u_x (x) =
+    \begin{cases}
+      u_{x-} (x) \text{ for } x < 0     , \\
+      u_{x0} (x) \text{ for } 0 ≤ x ≤ L , \\
+      u_{x+} (x) \text{ for }     L < x ,
+    \end{cases}
+\end{equation}
+with similar expressions for $u_y$ and $u_z$.
+The most general solution to \cref{eq:diffusion} decouples $u_z$ from $u_x$ and $u_y$.
+The requirement $\lim_{x → ± ∞} u(x) = 0$ yields
+\begin{subequations}
+  \begin{alignat}{3}
+    & u_{z±} (x) && {}={} && A^∓ e^{∓ k x}                     , \\
+    & u_{z0} (x) && {}={} && A_0^+ e^{k x} {}+{} A_0^- e^{-k x} ,
+  \end{alignat}
+\end{subequations}
+and
+\begin{subequations}
+  \begin{alignat}{6}
+    & u_{x±} (x) && =   && B^∓ e^{∓ κ x} && {}+{} &&   && C^∓ e^{∓ \bar{κ} x} , \\
+    & u_{y±} (x) && = i && B^∓ e^{∓ κ x} && {}-{} && i && C^∓ e^{∓ \bar{κ} x} ,
+  \end{alignat}
+  \begin{alignat}{12}
+    & u_{x0} (x) && =   && B_0^+ e^{κ x} && {}+{} &&   && B_0^- e^{- κ x} && {}+{} &&   && C_0^+ e^{ \bar{κ} x } && {}+{} &&   && C_0^- e^{ - \bar{κ} x } , \\
+    & u_{y0} (x) && = i && B_0^+ e^{κ x} && {}+{} && i && B_0^- e^{- κ x} && {}-{} && i && C_0^+ e^{ \bar{κ} x } && {}-{} && i && C_0^- e^{ - \bar{κ} x } ,
+  \end{alignat}
+\end{subequations}
+where $κ = k \sqrt{1 + i ω τ}$.
+The twelve constants $A$, $B$ and $C$ (with their various subscripts and superscripts) must be determined by imposing the appropriate boundary conditions.
+
+We first require $u$ be continuous at $x = 0$ and $x = L$; this gives six equations.
+We now require a boundary condition on $∇u$, but $∇u$ cannot be assumed continuous at the contact.
+We make the assumption that the total spin current at the contact
+is the sum of the spin currents on either side, i.e.,
+\begin{subequations}
+  \label{eq:current.sum}
+  \begin{alignat}{2}
+    & ȷ_0 && = σ^N \left[ - u_-'(0) + u_0'(0) \right] , \\
+    & ȷ_L && = σ^N \left[ - u_0'(L) + u_+'(L) \right] .
+  \end{alignat}
+\end{subequations}
+The signs have been chosen to be consistent with the physical geometry.
+The only nonzero component of the current at the contacts inside the semiconductor
+is the $x$ component at $x = 0$, so we use \cref{eq:bdry_solutions.current}.
+For all other components there is zero current at the contact, and we use
+\cref{eq:bdry_solutions.zero.current}.
+Together with \cref{eq:current.sum}, this gives the other six equations,
+\begin{subequations}
+  \begin{alignat}{8}
+    & - & {} & u_{z-}'(0) & {}+{} & u_{z0}'(0) & {}+{} & η_0 u_z(0) && = 0 , \\
+    &   & {} & u_{z+}'(L) & {}-{} & u_{z0}'(L) & {}+{} & η_L u_z(L) && = 0 , \\
+    & - & {} & u_{x-}'(0) & {}+{} & u_{x0}'(0) & {}+{} & η_0 u_x(0) && = Δ , \\
+    &   & {} & u_{x+}'(L) & {}-{} & u_{x0}'(L) & {}+{} & η_L u_x(L) && = 0 , \\
+    & - & {} & u_{y-}'(0) & {}+{} & u_{y0}'(0) & {}+{} & η_0 u_y(0) && = 0 , \\
+    &   & {} & u_{y+}'(L) & {}-{} & u_{y0}'(L) & {}+{} & η_L u_y(L) && = 0 ,
+  \end{alignat}
+\end{subequations}
+where
+\begin{subequations}
+  \begin{alignat}{2}
+  & η_i^{-1} && = - σ^N \left( R_F + R_C^i \right) , \\
+  & Δ && = - (- J_0) \left( P_σ^F R_F + P_Σ^0 R_C^0 \right) η_0 .
+  \end{alignat}
+\end{subequations}
+We define the $r$-parameter, $r_i = - η_i^{-1}$, introduced in \cref{eq:r-parameter}.
+
+These equations can be organized into a matrix equation and solved algebraically.
+A solution for $u_z$ corresponds to a condition of vanishing determinant,
+\begin{equation}
+  e^{-2 L / λ} = \left( 1 + \frac{2 r_0}{λ} \right) \left( 1 + \frac{2 r_L}{λ} \right) ,
+\end{equation}
+which can never be satisfied
+\footnote{
+  Except at the nonphysical point $L / λ = r_i / λ = 0$.
+},
+thus $u_z = 0$ is the only allowed solution.
+The other two components form an eight dimensional linear system.
+Solving this gives the remaining constants, and thus
+$u_x (L) = e^{- κ L} B^- + e^{- \bar{κ} L} C^-$.
+
+Finally, by using $p_1 = - σ^N Δ / J_0$ along with \cref{eq:rnl.full},
+we can introduce $\rSQ$ from \cref{eq:square_resistance}
+and the polarizations
+\begin{subequations}
+  \label{eq:polarizations}
+  \begin{align}
+    p_1 & = \frac{P_σ^F R_F + P_Σ^L R_C^L}{R_F + R_C^L} , \\
+    p_2 / p_1 & = \left. \left( 1 - \frac{P_σ^F R_F}{P_Σ^L R_C^L} \right) \middle/
+                  \left(1 + \frac{P_σ^F R_F}{P_Σ^L R_C^L} \right) \right. ,
+  \end{align}
+\end{subequations}
+to write
+\begin{equation}
+  \frac{\rNLeff}{\rSQ} = \frac{p_1 p_2}{W / λ} \left[ - \frac{k u_x (L)}{Δ} \right] .
+\end{equation}
+The factor in brackets is the function $f$ given in \cref{eq:f}.
