@@ -24,7 +24,7 @@
     "package.json"
   ],
   "dependencies": {
-    "references": "razor-x/references",
+    "references": "razor-x/references#master",
     "tikz-nonlocal_spin_valve": "evansosenko/tikz-nonlocal_spin_valve#v1.2"
   }
 }
