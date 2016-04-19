@@ -1,0 +1,469 @@
+\subsection{Intrinsic Superconductivity}
+
+\subsubsection{Interaction in the Effective Model}
+
+Note that for the effective low-energy, dual-valley model,
+\cref{eq:interaction:tight-binding:final}
+is oversimplified
+We must first split up each integral into
+a region about each valley center.
+The allowed transitions are still constrained
+by global conservation of momentum.
+
+Starting with
+\cref{eq:interaction:tight-binding:momentum},
+the integral over $\vc{q}$ is unchanged,
+\begin{multline}
+  V
+  = \frac{1}{2} \frac{Ω}{N}
+    ∑_{ν, ν'}
+    ∑_{σ, σ'}
+    ∑_{\vK', \bar{\vK}}
+    ∑_{\vK, \bar{\vK}'}
+    \tilde{v}^{ν ν'}_{\vK - \bar{\vK}}
+    δ \left[ % chktex 19
+      \left(\bar{\vK}' - \vK' \right) - \left(\vK - \bar{\vK} \right)
+    \right] \\
+    a_{\bar{\vK} ν σ}^† a_{\bar{\vK}' ν' σ'}^†
+    a_{\vK' ν' σ'} a_{\vK ν σ}.
+\end{multline}
+We now split up the integral over the global momentum coordinates
+into integrals over relative coordinates centered about each valley;
+this introduces an additional overall factor of $2^{-4}$
+(two valley centers per momentum integral with
+four independent momentum-space coordinates).
+We then restrict each integral to a suitable region about each valley
+(indicated by a prime on the summation).
+The relative coordinates are thus introduced by the substitution
+$\vK → \vK + τ \vc{K}$, etc.
+
+Global conservation of momentum, represented by the $δ$-function, % chktex 19
+now requires
+\begin{equation}
+  \vK - \bar{\vK} + \left( τ - \bar{τ} \right) \vc{K}
+  = \bar{\vK}' - \vK' + \left( \bar{τ}' - τ' \right) \vc{K}.
+\end{equation}
+Since $\abs{\vK} ≪ \abs{\vc{K}}$,
+the above is actually the two independent conditions,
+\begin{subequations}
+  \begin{align}
+    \vK - \bar{\vK}
+    & = \bar{\vK}' - \vK', \\
+    τ - \bar{τ}
+    & = \bar{τ}' - τ'.
+  \end{align}
+\end{subequations}
+There are three allowed cases for the sum over the valley indexes:
+intravalley scattering with $τ = \bar{τ}$ and $τ' = \bar{τ}'$;
+intervalley scattering with $τ = - τ'$ and $\bar{τ} = - \bar{τ}'$;
+and exchange with $τ = \bar{τ}'$ and $\bar{τ} = τ'$.
+We indicate summation over the allowed cases
+by adding a prime to the sum.
+Thus, we obtain
+\begin{multline}
+  V
+  = \frac{1}{2^5}
+    ∑_{ν, ν'}
+    ∑_{σ, σ'}
+    \sideset{}{'} ∑_{\vK, \vK', \vc{q}}
+    \sideset{}{'} ∑_{\substack{τ, \bar{τ}, \\ τ', \bar{τ}'}}
+    \tilde{v}^{ν' ν}_{\vc{q} + \left( \bar{τ} - τ \right) \vc{K}} \\
+    {a_{\bar{τ} σ}^ν} ^† \of{\vK + \vc{q}}
+    {a_{\bar{τ}' σ'}^{ν'}}^† \of{\vK' - \vc{q}}
+    a_{τ' σ'}^{ν'} \ofKP
+    a_{τ σ}^ν \ofK.
+\end{multline}
+
+The expected BCS instability is strongest for scattering
+with $\vK = - \vK'$.
+Restricting the sum over $\vK'$ to this condition,
+relabeling the momentum indexes,
+and defining $v_{\vc{q}}^{ν ν'} = 2^{-4} \tilde{v}_{\vc{q}}^{ν' ν}$ gives
+\begin{multline}
+  V
+  = \frac{1}{2}
+    ∑_{ν, ν'}
+    ∑_{σ, σ'}
+    \sideset{}{'} ∑_{\vK, \vK'}
+    \sideset{}{'} ∑_{\substack{τ, \bar{τ}, \\ τ', \bar{τ}'}}
+    v^{ν ν'}_{\vK' - \vK + \left( \bar{τ} - τ \right) \vc{K}} \\
+    {a_{\bar{τ} σ}^ν}^† \ofKP
+    {a_{\bar{τ}' σ'}^{ν'}}^† \ofMKP
+    a_{τ' σ'}^{ν'} \ofMK
+    a_{τ σ}^ν \ofK.
+\end{multline}
+Expanding the sum over the valley indexes gives
+\begin{multline}
+  V
+  = \frac{1}{2}
+    \sideset{}{'} ∑_{\vK, \vK'}
+    ∑_{τ, τ',}
+    ∑_{σ, σ'}
+    ∑_{ν, ν'}
+    [ \\
+    v^{ν ν'}_{\vK' - \vK}
+    {a_{τ σ}^ν}^† \ofKP
+    {a_{τ' σ'}^{ν'}}^† \ofMKP
+    a_{τ' σ'}^{ν'} \ofMK
+    a_{τ σ}^ν \ofK
+    \\ +
+    v^{ν ν'}_{\vK' - \vK + \left( τ' - τ \right) \vc{K}}
+    {a_{τ' σ}^ν}^† \ofKP
+    {a_{-τ' σ'}^{ν'}}^† \ofMKP
+    a_{-τ σ'}^{ν'} \ofMK
+    a_{τ σ}^ν \ofK
+    \\ +
+    v^{ν ν'}_{\vK' - \vK + \left( τ' - τ \right) \vc{K}}
+    {a_{τ' σ}^ν}^† \ofKP
+    {a_{τ σ'}^{ν'}}^† \ofMKP
+    a_{τ' σ'}^{ν'} \ofMK
+    a_{τ σ}^ν \ofK
+    ].
+\end{multline}
+
+Projecting to bands with $α = τ = σ$,
+\begin{multline}
+  V
+  = \frac{1}{2}
+    \sideset{}{'} ∑_{\vK, \vK'}
+    ∑_{ν, ν'}
+    ∑_α
+    v^{ν ν'}_{\vK' - \vK}
+    [ \\
+    {a^ν_α}^† \ofKP
+    {a^{ν'}_α}^† \ofMKP
+    a^{ν'}_α \ofMK
+    a^ν_α \ofK
+    \\ +
+    {a^ν_α}^† \ofKP
+    {a^{ν'}_{-α}}^† \ofMKP
+    a^{ν'}_{-α} \ofMK
+    a^ν_α \ofK
+    \\ +
+    ∑_{α'}
+    {a^ν_{α}}^† \ofKP
+    {a^{ν'}_{α'}}^† \ofMKP
+    a^{ν'}_{α'} \ofMK
+    a^ν_α \ofK
+    ].
+\end{multline}
+This simplifies into explicit intervalley and intravalley terms,
+\begin{multline}
+  \label{eq:interaction:tight-binding:superconducting}
+  V
+  = \sideset{}{'} ∑_{\vK, \vK'}
+    ∑_{ν, ν'}
+    ∑_α
+    v^{ν ν'}_{\vK' - \vK}
+    [ \\
+    {a^ν_α}^† \ofKP
+    {a^{ν'}_α}^† \ofMKP
+    a^{ν'}_α \ofMK
+    a^ν_α \ofK
+    \\ +
+    {a^ν_α}^† \ofKP
+    {a^{ν'}_{-α}}^† \ofMKP
+    a^{ν'}_{-α} \ofMK
+    a^ν_α \ofK
+    ].
+\end{multline}
+
+\subsubsection{Superconducting Channels}
+
+Assuming the interaction is real-valued and orbital-independent,
+$v^{ν ν'}_{\vK' - \vK} = v \of{\vK' - \vK} = v \of{\vK - \vK'}$,
+\cref{eq:interaction:tight-binding:superconducting}
+projected to the upper $n = -1$ bands with $τ = σ$ is
+\begin{multline}
+  \label{eq:intrinsic:projected}
+  P_{τ = σ}^{-} \left( H^V \right) =
+    \sumKK v \of{\vK' - \vK}
+    \\ × \left(
+      A_{\vK \vK'}^2 c_{\vK' ↑}^† c_{-\vK' ↑}^† c_{-\vK ↑} c_{\vK ↑}
+      + \cc{A}_{\vK \vK'}^2 c_{\vK' ↓}^† c_{-\vK' ↓}^† c_{-\vK ↓} c_{\vK ↓}
+    \right. \\ + \left.
+      2 \abs{A_{\vK \vK'}}^2
+      c_{\vK' ↑}^† c_{-\vK' ↓}^† c_{-\vK ↓} c_{\vK ↑}
+    \vphantom{2 \abs{A_{\vK \vK'}}^2} \right),
+\end{multline}
+where
+\begin{equation}
+  A_{\vK \vK'} =
+    e^{i \left( ϕ_{\vK'} - ϕ_{\vK} \right)}
+    \sin{\frac{θ_{\vK'}}{2}} \sin{\frac{θ_{\vK}}{2}}
+    + \cos{\frac{θ_{\vK'}}{2}} \cos{\frac{θ_{\vK}}{2}}.
+\end{equation}
+
+For the intravalley channels, the coefficient can be expanded as
+\begin{equation}
+  A_{\vK \vK'}^2
+  = \sum_{m = 0}^2 \cc{f}_{\vK}^m · g_{\vK'}^m,
+\end{equation}
+with $f_{\vK}^m = g_{\vK'}^m$ and
+\begin{subequations}
+  \begin{align}
+    f_{\vK}^0
+    & = \cos^2{\frac{θ_{\vK}}{2}}
+      = \frac{1}{2} P_0 \of{\cos{θ_{\vK}}}
+      + \frac{1}{2} P_1 \of{\cos{θ_{\vK}}}, \\
+    e^{-i ϕ_{\vK}} f_{\vK}^1
+    & = \sqrt{2} \sin{\frac{θ_{\vK}}{2}} \cos{\frac{θ_{\vK}}{2}}
+      = \frac{1}{\sqrt{2}} P_1 \of{\sin{θ_{\vK}}}, \\
+    e^{-2 i ϕ_{\vK}} f_{\vK}^2
+    & = \sin^2{\frac{θ_{\vK}}{2}}
+      = \frac{1}{2} P_0 \of{\cos{θ_{\vK}}}
+      - \frac{1}{2} P_1 \of{\cos{θ_{\vK}}}.
+  \end{align}
+\end{subequations}
+Here, $P_l$ are the Legendre polynomials:
+$P_0 \of{x} = 1$ and $P_1 \of{x} = x$.
+
+For the intervalley channels, the coefficient can be expanded as
+\begin{equation}
+  2 \abs{A_{\vK \vK'}}^2
+  = \sum_{l = 0}^1 \cc{f}_{\vK}^l · g_{\vK'}^l
+  + \cc{f}_{\vK} · g_{\vK'},
+\end{equation}
+with $f_{\vK}^l = g_{\vK'}^l$,
+$f_{\vK} = g_{\vK'}$, and
+\begin{subequations}
+  \begin{align}
+    f_{\vK}^0
+    & = \sqrt{2} P_0 \of{\cos{θ_{\vK}}}, \\
+    f_{\vK}^1
+    & = \sqrt{2} P_1 \of{\cos{θ_{\vK}}}, \\
+    f_{\vK}
+    & = \sqrt{2} P_1 \of{\sin{θ_{\vK}}} \vc{\hat{k}}.
+  \end{align}
+\end{subequations}
+
+\subsubsection{Mean Field Approximation}
+
+Using the mean field approximation, we make replacements of the form
+$A B = A \ev{B} + \ev{A} B - \ev{A} \ev{B}$,
+where $A$ ($B$) is the product of two creation (annihilation) operators.
+The expectation value is taken in the superconducting ground state.
+We assume $v \of{ \vK - \vK'} = - v_0$ is a constant attractive interaction,
+possibly with some effective interaction range
+which further restricts the summation.
+\Cref{eq:intrinsic:projected} thus reduces to a sum of terms of the form
+\begin{equation}
+  - \sumK \left(
+    \cc{Δ}_{\vK}^{γ γ'} c_{-\vK γ'} c_{\vK γ}
+    + \frac{ε_{γ γ'}}{2}
+  \right) + \hc,
+\end{equation}
+where $γ = γ' = ±1$ ($γ = - γ' = 1$) corresponds to the
+intravalley (intervalley) scattering channels,
+\begin{equation}
+  Δ_{\vK}^{γ γ'} =
+    - \sumKP \cc{v}_{\vK \vK'}^{γ γ'} \ev{c_{-\vK' γ'} c_{\vK' γ}},
+\end{equation}
+and
+\begin{align}
+  ε_{γ γ'}
+    & = - \sumKK v_{\vK \vK'}^{γ γ'}
+        \ev{c_{\vK' γ}^† c_{-\vK' γ'}^†} \ev{c_{-\vK γ'} c_{\vK γ}}, \\
+    & = \sumK Δ_{\vK}^{γ γ'} \ev{c_{\vK γ}^† c_{-\vK γ'}^†}.
+\end{align}
+
+Projected to a single superconducting channel, the Hamiltonian is
+\begin{multline}
+  \label{eq:intrinsic:projected:channel}
+  P_{γ γ'}^{-} \left( H^0 + H^V - μ N \right) = \\
+    ε_{γ γ'}
+    + \sumK \left(
+      ξ_{\vK} c_{\vK γ}^† c_{\vK γ}
+      + δ_{γ, -γ'} ξ_{\vK} c_{\vK γ'}^† c_{\vK γ'} % chktex 19
+    \right) \\
+    - \sumK \left(
+    \cc{Δ}_{\vK}^{γ γ'} c_{-\vK γ'} c_{\vK γ}
+    + Δ_{\vK}^{γ γ'} c_{\vK γ}^† c_{-\vK γ'}^†
+    \right).
+\end{multline}
+
+\subsubsection{Channel Solutions}
+
+An interaction for a given channel may be written as
+\begin{equation}
+  v_{\vK \vK'} = \cc{v}_{\vK' \vK} = - v_0 \cc{f}_{\vK} · g_{\vK'},
+\end{equation}
+where we suppress the channel and band indexes here and in the following
+when there is no ambiguity.
+The channels are further split according to angular momentum,
+and the individual channels and their weights are summarized in
+\cref{tbl:intrinsic:interactions}.
+
+% TODO Add table of channel weights.
+\begin{table}
+  \caption{Superconducting channel weights.}
+\label{tbl:intrinsic:interactions}
+\end{table}
+
+The order parameter is
+\begin{equation}
+  \label{eq:intrinsic:gap}
+  Δ_0 = v_0 \sumK \cc{g}_{\vK} \ev{c_{-\vK γ'} c_{\vK γ}},
+\end{equation}
+thus $Δ_{\vK} = f_{\vK} · Δ_0$.
+Note that we allow $f_{\vK}$, $g_{\vK}$, and $Δ_0$
+to be either scalar or vector quantities.
+
+The Hamiltonian in \cref{eq:intrinsic:projected:channel}
+is again identical in structure to the BCS Hamiltonian,
+however the parameter $Δ_{\vK}$ must be allowed complex
+as multiple channels may differ by relative phases
+which cannot be removed by a global unitary transformation.
+The solutions for each channel all share an identical form;
+however, for the intravalley channels,
+the expression for the eigenvalues $λ_{\vK}$
+and other associated expressions
+is modified according to $ξ → ξ / 2$,
+since the kinetic energy is split between each valley.
+To keep track of the two cases, we will write $ξ'$,
+where $ξ' = ξ$ for intervalley channels and
+$ξ' = ξ / 2$ for intravalley channels.
+
+The diagonalized form is
+\begin{multline}
+  P \left( H^0 + H^V - μ N \right) = \\
+    \sumK ∑_{α = γ, γ'} λ_{\vK} b_{\vK α}^† b_{\vK α}
+    + \sumK \left( ξ_{\vK}' - λ_{\vK} \right) + ε,
+\end{multline}
+with eigenvalues
+\begin{equation}
+  λ_{\vK} = \sqrt{ξ_{\vK}'^2 + \abs{Δ_{\vK}}^2}.
+\end{equation}
+The Bogoliubov transformation for complex $Δ_{\vK}$ is
+\begin{subequations}
+  \begin{align}
+    c_{\vK γ}
+    & = e^{-i δ_{\vK}} \cos{β_{\vK}} b_{\vK γ}       % chktex 19
+      + e^{i δ_{\vK}'} \sin{β_{\vK}} b_{-\vK γ'}^†, \\ % chktex 19
+    c_{-\vK γ'}
+    & = e^{i δ_{\vK}'} \sin{β_{\vK}} b_{\vK γ}^† % chktex 19
+      - e^{-i δ_{\vK}} \cos{β_{\vK}} b_{-\vK γ'},  % chktex 19
+  \end{align}
+\end{subequations}
+where $δ_{\vK}' - δ_{\vK} = \arg{Δ_{\vK}}$ and % chktex 19
+\begin{subequations}
+  \begin{alignat}{3}
+    \sin{2 β_{\vK}} & = && {}-{} && \abs{Δ_{\vK}} / λ_{\vK}, \\
+    \cos{2 β_{\vK}} & = && {} {} && ξ_{\vK}' / λ_{\vK}.
+  \end{alignat}
+\end{subequations}
+Note also the inverse,
+\begin{subequations}
+  \begin{align}
+    b_{\vK γ}
+    & = e^{i δ_{\vK}} \cos{β_{\vK}} c_{\vK γ}       % chktex 19
+      + e^{i δ_{\vK}'} \sin{β_{\vK}} c_{-\vK γ'}^†, \\ % chktex 19
+    b_{-\vK γ'}
+    & = e^{i δ_{\vK}'} \sin{β_{\vK}} c_{\vK γ}^† % chktex 19
+      - e^{i δ_{\vK}} \cos{β_{\vK}} c_{-\vK γ'}.  % chktex 19
+  \end{align}
+\end{subequations}
+
+With this, \Cref{eq:intrinsic:gap} becomes
+\begin{equation}
+  \label{eq:intrinsic:gap:general}
+  \begin{aligned}
+    Δ_0
+    & = v_0 \sumK \cc{g}_{\vK}
+        \left( - \frac{1}{2} e^{i \arg{Δ_{\vK}}} \sin{2 β_{\vK}} \right), \\
+    & = \frac{v_0}{2} \sumK \cc{g}_{\vK}
+        \frac{\abs{Δ_{\vK}} e^{i \arg{Δ_{\vK}}}}{λ_{\vK}}, \\
+    & = \frac{v_0}{2} \sumK \cc{g}_{\vK}
+        \frac{Δ_{\vK}}{λ_{\vK}}, \\
+    & = \frac{v_0}{2} \sumK \cc{g}_{\vK}
+        \frac{f_{\vK} · Δ_0}{λ_{\vK}}.
+  \end{aligned}
+\end{equation}
+
+\subsubsection{Scalar Channels}
+
+% TODO Add correct factor going from sum to integral.
+
+For scalar channels, $f_{\vK} = g_{\vK}$.
+We replace the sum by an integral, and since
+$\abs{f_{\vK}}^2$ and $λ_{\vK}$ depend only on $\abs{\vK}$,
+the integral over $ϕ$ is trival and yields a factor of $2 π$.
+\Cref{eq:intrinsic:gap:general} becomes
+\begin{equation}
+  1
+  = π v_0 ∫_{-ω}^{ω}
+  \frac{\abs{f \of{ξ}}^2 \abs{ρ \of{ξ}} \dif ξ}
+  {\sqrt{ξ'^2 + \abs{f \of{ξ}}^2 \abs{Δ_0}^2}},
+\end{equation}
+where $ω < λ$ is the energy cutoff around the chemical potential
+and the density of states is
+\begin{equation}
+  ρ \of{ξ}
+  = k \pderiv{k}{ξ}
+  = \frac{2 \left( ξ + μ \right) - λ}{{\left( a t \right)}^2}.
+\end{equation}
+
+\subsubsection{Vector Channels}
+
+For the intervalley vector channels,
+$f_{\vK} = g_{\vK} = \sqrt{2} \sin{θ_{\vK} \vc{\hat{k}}}$
+and $Δ_0 = \left( \abs{Δ_0} / \sqrt{2} \right)
+\left( \hat{e}_1 + i \hat{e}_2 \right)$
+for some fixed unit vectors $\hat{e}_1$ and $\hat{e}_2$.
+We consider two cases:
+$\hat{e}_1 ∥ \hat{e}_2$ or $\hat{e}_1 ⊥ \hat{e}_2$.
+
+When $\hat{e}_1 ∥ \hat{e}_2$,
+write $Δ_0 = \abs{Δ_0} \hat{e} e^{i ϕ_0}$
+and $\vc{\hat{k}} · \hat{e} = \cos{\left( ϕ_{\vK} - ϕ_e \right)}$
+so \cref{eq:intrinsic:gap:general} reads
+\begin{equation}
+  \begin{aligned}
+    \hat{e}
+    & = \frac{v_0}{2} \sumK \frac{\abs{f_{\vK}}^2}{λ_{\vK}}
+        \left( \hat{e} · \vc{\hat{k}} \right) \vc{\hat{k}}.
+  \end{aligned}
+\end{equation}
+Dotting both sides with $\hat{e}$ and converting to integral form,
+\begin{equation}
+  1
+  = \frac{v_0}{2} ∫_{-ω}^{ω} ∫_{0}^{2 π}
+  \frac{\abs{f \of{ξ}}^2 \cos^2{ϕ} \abs{ρ \of{ξ}} \dif ϕ \dif ξ}
+  {\sqrt{ξ^2 + \abs{f \of{ξ}}^2 \abs{Δ_0}^2 \cos^2{ϕ}}},
+\end{equation}
+where as expected by symmetry,
+the integral has been made independent of the direction of $\hat{e}$
+through the substitution $ϕ → ϕ + ϕ_e$.
+The integral over $ϕ$ can be
+written in terms of elliptical functions using the identity
+\begin{multline}
+  \frac{a^2}{2} ∫_{0}^{2 π}
+  \frac{\cos^2{ϕ} \dif ϕ}{\sqrt{1 + a^2 \cos^2{ϕ}}}
+  = E \of{-a^2} - K \of{-a^2} \\
+  + \sqrt{1 + a^2} E \of{\frac{a^2}{1 + a^2}}
+  - \frac{1}{\sqrt{1 + a^2}} K \of{\frac{a^2}{1 + a^2}}.
+\end{multline}
+
+When $\hat{e}_1 ⊥ \hat{e}_2$, then we may write
+$\hat{e}_1 · \vc{\hat{k}} = \cos{\left( ϕ_{\vK} - ϕ_1 \right)}$
+and $\hat{e}_2 · \vc{\hat{k}} = \sin{\left( ϕ_{\vK} - ϕ_1 \right)}$,
+thus
+\begin{equation}
+  \hat{e}_1 + i \hat{e}_2
+  = \frac{v_0}{2} \sumK \frac{\abs{f_{\vK}}^2}{λ_{\vK}}
+    \left[ \left( \hat{e}_1 + i \hat{e}_2 \right) · \vc{\hat{k}}
+    \right] \vc{\hat{k}},
+\end{equation}
+and dotting both sides by $\hat{e}_1 - i \hat{e}_2$ gives
+\begin{equation}
+  2
+  = \frac{v_0}{2} \sumK \frac{\abs{f_{\vK}}^2}
+    {\sqrt{ξ_{\vK}^2 + \left( 1 / 2 \right) \abs{f_{\vK}}^2 \abs{Δ_0}^2}}.
+\end{equation}
+and converting to integral form,
+\begin{equation}
+  1
+  = \frac{π v_0}{2} ∫_{-ω}^{ω}
+  \frac{\abs{f \of{ξ}}^2 \abs{ρ \of{ξ}} \dif ξ}
+  {\sqrt{ξ^2 + \left( 1 / 2 \right) \abs{f \of{ξ}}^2 \abs{Δ_0}^2}}.
+\end{equation}

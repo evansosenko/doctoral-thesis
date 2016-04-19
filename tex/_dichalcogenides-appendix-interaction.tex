@@ -1,0 +1,185 @@
+\subsection{Electron-Electron Interaction}
+
+The BCS theory of superconductivity is often introduced as
+a consequence of the effective electron-electron interaction
+arising from the underlying electron-phonon interaction.
+In this section, we review general two particle interactions,
+and derive the form of the electron-electron interaction
+when applied to the tight binding model.
+
+Consider a general spin-independent interaction potential
+$v \of{\vc{x}, \vc{x}'}$ which depends on the positions
+$\vc{x}$ and $\vc{x}'$ of a pair of particles.
+In a multiparticle system of dimension $d$ with no self-interaction,
+this may be written as an additive pair operator
+in a given bases of fermionic Fock operators,
+$C_α^† \Ket{0} = \Ket{α} = \Ket{f_α} ⊗ \Ket{σ_α}$, as
+% TODO Cite Ballentine, etc..
+
+\begin{equation}
+  \label{eq:interaction:general}
+  \begin{aligned}
+  V
+  & = \frac{1}{2} ∑_{i ≠ j} v \of{\vc{Q}_i, \vc{Q}_j}, \\
+  & = \frac{1}{4} \sumInt
+    \Braket{α β | v | γ δ} C_α^† C_β^† C_δ C_γ, \\ % chktex 19
+  & = \frac{1}{2} \sumInt
+    v_{α β, γ δ} C_α^† C_β^† C_δ C_γ. % chktex 19
+  \end{aligned}
+\end{equation}
+Here, $\Ket{α β} = \left( \Ket{α} \Ket{β}
+- \Ket{β} \Ket{α} \right) / \sqrt{2}$,
+and we introduce the symbol
+\begin{multline}
+  v_{α β, γ δ} % chktex 19
+  = \left( \Bra{f_α} \Bra{f_β} \right) v
+    \left( \Ket{f_γ} \Ket{f_δ} \right) % chktex 19
+    \Braket{σ_α | σ_γ} \Braket{σ_β | σ_δ}, \\ % chktex 19
+  = δ_{σ_α σ_γ} δ_{σ_β σ_δ} % chktex 19
+    ∫ \cc{f}_α \of{\vc{x}} \cc{f}_β \of{\vc{x}'} v % chktex 19
+    \of{\vc{x}, \vc{x}'} f_γ \of{\vc{x}} f_δ \of{\vc{x}'} % chktex 19
+    \dif^d \vc{x} \dif^d \vc{x}',
+\end{multline}
+so that $\Braket{α β | v | γ δ} = v_{α β, γ δ} - v_{α β, δ γ}$. % chktex 19
+
+If one chooses the continuous basis of position eigenstates,
+$Ψ_σ^† \of{\vc{x}} \Ket{0} = \Ket{\vc{x}} ⊗ \Ket{σ}$,
+then \cref{eq:interaction:general} takes the form of an integral over
+density-density interactions,
+\begin{equation}
+  \label{eq:interaction:position-space}
+  V
+  = \frac{1}{2}
+    ∫ v \of{\vc{x}, \vc{x}'}
+    \normalorder{ρ \of{\vc{x}} ρ \of{\vc{x}'}}
+    \dif^d \vc{x} \dif^d \vc{x}',
+\end{equation}
+where the colon denotes normal ordering and
+\begin{equation}
+  ρ \of{\vc{x}} = ∑_σ Ψ_σ^† \of{\vc{x}} Ψ_σ \of{\vc{x}}.
+\end{equation}
+
+For interactions which depend only on the relative separation,
+$v \of{\vc{x}, \vc{x}'} = v \of{\vc{x}' - \vc{x}} = v \of{\vc{r}}$,
+if one chooses the countable basis
+of box normalized momentum eigenstates in a volume $Ω$
+with periodic boundary conditions,
+$c_{\vc{p} σ}^† \Ket{0} = \Ket{\vc{p}} ⊗ \Ket{σ}$
+with
+$\Braket{\vc{x} | \vc{p}} = Ω^{-1 / 2} e^{i \vc{p} · \vc{x}}$
+then
+\begin{equation}
+  \label{eq:interaction:momentum-space}
+  V
+  = \frac{1}{2}
+    ∑_{\vc{p}, \vc{p'}, \vc{q}}
+    ∑_{σ, σ'}
+    \tilde{v}_{\vc{q}}
+    c_{\vc{p} + \vc{q} σ}^† c_{\vc{p}' - \vc{q} σ'}^†
+    c_{\vc{p}' σ'} c_{\vc{p} σ},
+\end{equation}
+where
+\begin{equation}
+  \label{eq:interaction:fourier:coefficients}
+  \tilde{v}_{\vc{q}}
+  = \frac{1}{Ω} ∫ v \of{\vc{r}} e^{-i \vc{q} · \vc{r}} \dif^d \vc{r}.
+\end{equation}
+
+\subsubsection{Interaction in the Tight Binding Model}
+
+We now apply the above to the basis introduced in the tight binding model.
+Introduce a Wannier representation,
+\begin{equation}
+  \Ket{ϕ_{ν \vK}}
+  = \frac{1}{\sqrt{N}}
+    ∑_{\vR} e^{i \vK ⋅ \vR}
+    \Ket{ϕ_{ν \vR}},
+\end{equation}
+where for convenience we write $\vR$ for $\vRn{n}$.
+We adopt the following section-specific notation for the Fock operators,
+\begin{subequations}
+  \begin{alignat}{2}
+    a_{\vK ν σ}^† \Ket{0}
+    &  = \Ket{ϕ_{ν \vK σ}}
+    && = \Ket{ϕ_{ν \vK}} ⊗ \Ket{σ}, \\
+    a_{\vR ν σ}^† \Ket{0}
+    &  = \Ket{ϕ_{ν \vR σ}}
+    && = \Ket{ϕ_{ν \vR}} ⊗ \Ket{σ}.
+  \end{alignat}
+\end{subequations}
+which explicitly separates out the spin index.
+Since
+\begin{equation}
+  \Braket{\vc{x} | ϕ_{ν \vR}}
+  = \Braket{\vc{x} - \vR | φ_ν}
+  = φ_ν \of{\vc{x} - \vR},
+\end{equation}
+by keeping only on-center, like-orbital terms,
+the interaction may by simplified to the approximate form
+\begin{equation}
+  V
+  ⋍ \frac{1}{2}
+    ∑_{\vR, \vR'}
+    ∑_{ν, ν'}
+    v_{\vR \vR'}^{ν ν'}
+    \normalorder{n_{\vR ν} n_{\vR' ν'}},
+\end{equation}
+with the number operators,
+\begin{equation}
+  n_{ν \vR}
+  = ∑_σ a_{\vR ν σ}^† a_{\vR ν σ},
+\end{equation}
+and interaction integral,
+\begin{equation}
+  v_{\vR \vR'}^{ν ν'}
+  = ∫ v \of{\vc{x}, \vc{x}'}
+    \abs{φ_ν \of{\vc{x} - \vR}}^2
+    \abs{φ_{ν'} \of{\vc{x}' - \vR'}}^2
+    \dif^d \vc{x} \dif^d \vc{x}'.
+\end{equation}
+This sum over density-density interactions mimics
+\cref{eq:interaction:position-space}.
+
+Further, assuming that the interaction
+depends only on the relative separation,
+$v_{\vR \vR'}^{ν ν'} = v_{ν ν'} \of{\vR' - \vR}$,
+we may introduce the Fourier expansion
+\begin{equation}
+  \tilde{v}^{ν ν'}_{\vc{q}}
+  = ∑_{\vR} v_{ν ν'} \of{\vR} e^{i \vc{q} · \vR},
+\end{equation}
+and switch back to the Bloch representation,
+\begin{multline}
+  \label{eq:interaction:tight-binding:momentum}
+  V
+  = \frac{1}{2} {\left( \frac{Ω}{N} \right)}^2
+    ∑_{ν, ν'}
+    ∑_{σ, σ'}
+    ∑_{\vK', \bar{\vK}}
+    ∑_{\vK, \bar{\vK}'}
+    ∑_{\vc{q}}
+    \tilde{v}^{ν ν'}_{\vc{q}} \\
+    δ \left[ \vc{q} - \left(\vK - \bar{\vK} \right) \right] % chktex 19
+    δ \left[ \vc{q} - \left(\bar{\vK}' - \vK' \right) \right] \\ % chktex 19
+    a_{\bar{\vK} ν σ}^† a_{\bar{\vK}' ν' σ'}^†
+    a_{\vK' ν' σ'} a_{\vK ν σ}.
+\end{multline}
+As a convenience, we have written this
+as a sum over a countable set of momentum states,
+however any sum over momentum may be converted to an integral
+according to the substitution
+$∑_{\vK} → \left( N / Ω \right) ∫ \dif^d \vK$.
+Using this, we may integrate out the $δ$-functions % chktex 19
+and obtain a form that mimics
+\cref{eq:interaction:momentum-space},
+\begin{equation}
+  \label{eq:interaction:tight-binding:final}
+  V
+  = \frac{1}{2}
+    ∑_{\vK, \vK', \vc{q}}
+    ∑_{ν, ν'}
+    ∑_{σ, σ'}
+    \tilde{v}^{ν ν'}_{\vc{q}}
+    a_{\vK + \vc{q} ν σ}^† a_{\vc{\vK' - \vc{q}} ν' σ'}^†
+    a_{\vK' ν' σ'} a_{\vK ν σ}.
+\end{equation}

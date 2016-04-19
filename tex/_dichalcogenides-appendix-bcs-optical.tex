@@ -1,0 +1,120 @@
+\subsection{Optical BCS Theory in the Effective Model}
+\label{s:appendix:bcs-optical}.
+
+The general form of the full Hamiltonian which
+includes a BCS term for the upper-valance band is
+\begin{multline}
+  \label{eq:hamiltonian:bcs:general}
+  H = H^0 + H^V - μ N
+  = \sumK ∑_{n, τ, σ}
+    ξ_{τ σ}^n \ofK
+    {c_{τ σ}^n}^† \ofK
+    c_{τ σ}^n \ofK \\
+    - \sumK \left[
+    \cc{Δ}_{\vK}
+    c_{γ'}^- \ofMK
+    c_γ^- \ofK
+    +
+    Δ_{\vK}
+    {c_γ^-}^† \ofK
+    {c_{γ'}^-}^† \ofMK
+    \right]
+    + ε,
+\end{multline}
+where $γ = γ' = ±1$ or $γ = - γ' = 1$.
+
+The optical transition rate can now be expressed
+in terms of matrix elements between multiparticle states,
+however, we must first determine the appropriate form
+of the optical perturbation operator.
+
+Earlier, we derived the approximate transition rate in terms
+of the gradient of matrix elements of the Hamiltonian.
+We now seek the corresponding form of the perturbation
+written explicitly as an expansion in terms of Fock space operators.
+We consider a perturbation of $H^0$ arising from minimal coupling;
+we require it to match the result in the non-interacting limit.
+First, we make the unitary transformation
+$H^0_{\vK} + H^1_{\vK} = T_{\vK} H^0 T_{\vK}^{-1}$
+where $H^0_{\vK}$ and $H^1_{\vK}$ are again defined by
+\cref{appendix:optical:decomposition}.
+As we only consider transitions for fixed $\vK$,
+we may effectively set $H^1_{\vK} = 0$.
+From the remaining expression,
+\begin{equation}
+  H^0_{\vK}
+  = ∑_{ν, ν'} ∑_{τ, σ}
+    H_{τ σ}^{ν ν'} \ofK
+    T_{\vK}
+    {a^ν_{τ σ}}^† \ofK
+    a^{ν'}_{τ σ} \ofK
+    T_{\vK}^{-1},
+\end{equation}
+the results for the noninteracting system
+may be recovered through the substitution
+\begin{equation}
+  H_{τ σ}^{ν ν'} \ofK
+  → H_{τ σ}^{ν ν'} \of{\vK + e \vc{A}}
+  = H_{τ σ}^{ν ν'} \ofK + h_τ^{ν ν'},
+\end{equation}
+where in the dipole approximation,
+$\vc{A} = 2 \re{\vc{ϵ} A_0 e^{- i ω t}}$,
+$h_τ^{v v} = h_τ^{c c} = 0$,
+and
+\begin{equation}
+  h_τ^{v c}
+  = \cc{h}_τ^{c v}
+  = 2 a t e A_0
+    \left( τ \vc{\hat{x}} + i \vc{\hat{y}} \right)
+    · \re{\left( \vc{ϵ} e^{- i ω t} \right)}.
+\end{equation}
+Thus we expect the optical perturbation operator to be
+\begin{equation}
+  H^A
+  = \sumK ∑_{τ, σ}
+    h_τ^{v c}
+    {a^v_{τ σ}}^† \ofK
+    a^c_{τ σ} \ofK
+    + \hc
+\end{equation}
+Separating out the time dependence,
+we may write this in the standard form
+$H^A = H' e^{- i ω t} + H'^† e^{i ω t}$,
+where
+\begin{multline}
+  H'
+  = \sumK ∑_{τ, σ}
+    H'_τ
+    {a^v_{τ σ}}^† \ofK
+    a^c_{τ σ} \ofK \\
+  - \sumK ∑_{τ, σ}
+    H'_{-τ}
+    {a^c_{τ σ}}^† \ofK
+    a^v_{τ σ} \ofK,
+\end{multline}
+and
+\begin{equation}
+  H'_τ
+  = a t e A_0
+    \left( τ \vc{\hat{x}} + i \vc{\hat{y}} \right)
+    · \vc{ϵ}.
+\end{equation}
+Chancing basis, we may now recover the optical matrix element,
+$P_{τ σ}^{n n'} \of{\vK, \vc{ϵ}}$,
+now explicitly a function of the polarization vector,
+\begin{multline}
+  H^A
+  = \sumK ∑_{τ, σ} ∑_{n, n'}
+    \frac{e A_0}{m_0}
+    P_{τ σ}^{n n'} \of{\vK, \vc{ϵ}}
+    {c_{τ σ}^n}^† \ofK
+    c_{τ σ}^{n'} \ofK.
+\end{multline}
+For circularly polarized light,
+$\vc{ϵ_±} = \left( \vc{\hat{x}} ± i \vc{\hat{y}} \right) / \sqrt{2}$,
+\begin{equation}
+  P_{τ σ}^{+ -} \of{\vK, \vc{ϵ_±}}
+  = ∓ τ \sqrt{2} a t m_0
+    e^{± i ϕ}
+    \sin^2 {\frac{\fnTheta{∓ τ}}{2}}.
+\end{equation}

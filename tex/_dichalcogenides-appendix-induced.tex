@@ -1,0 +1,71 @@
+\subsection{Induced Superconductivity}
+
+A proximity $s$-wave superconductor will inject cooper pairs
+into the atomic orbitals according to
+\begin{equation}
+  H^V
+  = \sumK ∑_{ν, τ} \cc{Δ}_ν
+    a^ν_{-τ ↓} \ofMK a^ν_{τ ↑} \ofK + \frac{ε}{2} + \hc
+\end{equation}
+The coupling constants $Δ_ν$ and the overall constant $ε$
+depend on the material interface.
+
+The Hamiltonian projected to the upper $n = -1$ bands with $τ = σ$ is
+\begin{multline}
+  \label{eq:induced:projected}
+  P_{τ = σ}^{-} \left( H^0 + H^V - μ N \right)
+  = \sumK ∑_α ξ_{\vK} c_{\vK α}^† c_{\vK α} \\
+    - \sumK \left( \cc{Δ}_{\vK} c_{-\vK ↓} c_{\vK ↑}
+    + Δ_{\vK} c_{\vK ↑}^† c_{-\vK ↓}^† \right)
+    + ε,
+\end{multline}
+where
+\begin{equation}
+  Δ_{\vK}
+  = \frac{1}{2} \left( Δ_{\text{c}} + Δ_{\text{v}} \right)
+    +
+    \frac{1}{2} \left( Δ_{\text{c}} - Δ_{\text{v}} \right)
+    \cos{θ_{\vK}}.
+\end{equation}
+We use an abbreviated notation where we suppress the band index
+and write $α = ↑,↓$ for $τ = σ = ±1$.
+With this, let $ξ_{\vK} = E_{+ ↑}^- \ofAbsK - μ$
+and $c_{\vK α} = c^-_α \ofK$,
+where $μ$ is the chemical potential.
+The prime on the sum over $\vK$ indicates the summation is restricted
+to a suitable region within each valley.
+
+\Cref{eq:induced:projected}
+is identical in form to the standard BCS Hamiltonian.
+We may take $Δ_{\vK}$ to be real
+(otherwise, if $Δ_{\vK} = \abs{Δ_{\vK}} e^{i \arg{Δ_{\vK}}}$,
+then make the unitary transformation
+$c_{\vK α} → e^{i \arg{Δ_{\vK}} / 2} c_{\vK α}$).
+The diagonalized form is
+\begin{multline}
+  P_{τ = σ}^{-} \left( H^0 + H^V - μ N \right) = \\
+    \sumK ∑_α λ_{\vK} b_{\vK α}^† b_{\vK α}
+    + \sumK \left( ξ_{\vK} -  λ_{\vK} \right) + ε,
+\end{multline}
+with eigenvalues
+\begin{equation}
+  λ_{\vK} = \sqrt{ξ_{\vK}^2 + Δ_{\vK}^2}.
+\end{equation}
+This follows from the standard Bogoliubov transformation,
+written compactly as
+\begin{equation}
+  c_{\vK α}
+  = α \cos{β_{\vK}} b_{\vK α} + \sin{β_{\vK}} b_{-\vK, -α}^†,
+\end{equation}
+where
+\begin{subequations}
+  \begin{alignat}{3}
+    \sin{2 β_{\vK}} & = && {}-{} && Δ_{\vK} / λ_{\vK}, \\
+    \cos{2 β_{\vK}} & = && {} {} && ξ_{\vK} / λ_{\vK}.
+  \end{alignat}
+\end{subequations}
+Note also the inverse,
+\begin{equation}
+  b_{\vK α}
+  = α \cos{β_{\vK}} c_{\vK α} + \sin{β_{\vK}} c_{-\vK, -α}^†,
+\end{equation}
