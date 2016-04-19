@@ -1,0 +1,95 @@
+\section{Optoelectronic coupling}
+
+The parent compound displays valley selectivity.
+One circular polarization couples to one valley,
+and the opposite to the other.
+We investigate the extent to which this property
+is inherited by the superconducting phase.
+Note that one does not expect any dipolar coupling
+since the orbitals involved have the same parity.
+The optical excitations arise from the Berry curvature,
+which acts as an effective angular momentum.
+The electromagnetic potential $\vc{A}$,
+with polarization vector $\vc{ϵ}$,
+is introduced using minimal coupling,
+$H_{τ {\s}}^{ν ν'} \ofK
+→ H_{τ {\s}}^{ν ν'} \of{\vK + e \vc{A}}$,
+where, in the dipole approximation,
+$\vc{A} = 2 \re{\vc{ϵ} A_0 e^{- i ω t}}$.
+This yields a perturbed Hamiltonian
+$H → H + H^A$, where
+$H^A = H' e^{- i ω t} + H'^† e^{i ω t}$,
+with
+\begin{multline}
+  H'
+  = ∑_{\vK, τ, {\s}}
+    H'_τ
+    {a^-_{τ {\s}}}^† \ofK
+    a^+_{τ {\s}} \ofK \\
+  - ∑_{\vK, τ, {\s}}
+    H'_{-τ}
+    {a^+_{τ {\s}}}^† \ofK
+    a^-_{τ {\s}} \ofK,
+\end{multline}
+and
+$H'_τ
+= a t e A_0
+\left( τ \vc{\hat{x}} + i \vc{\hat{y}} \right) · \vc{ϵ}$.
+The transition rate is proportional to the modulus-squared
+of the optical matrix elements,
+$\vc{P}_{τ {\s}}^{n n'} \ofK$,
+defined by
+\begin{equation}
+  H^A
+  = ∑_{\substack{\vK, τ, {\s} \\ n, n'}}
+    \frac{e A_0}{m_0}
+    \vc{ϵ} · \vc{P}_{τ {\s}}^{n n'} \ofK
+    {c_{τ {\s}}^n}^† \ofK
+    c_{τ {\s}}^{n'} \ofK.
+\end{equation}
+
+For circularly polarized light, in the absence of superconductivity,
+$\vc{ϵ}_± = \left( \vc{\hat{x}} ± i \vc{\hat{y}} \right) / \sqrt{2}$ and
+\begin{equation}
+  \label{eq:optical}
+  \vc{ϵ}_± · \vc{P}_{τ {\s}}^{+ -} \of{\vK}
+  = ∓ τ \sqrt{2} a t m_0
+    e^{± i ϕ}
+    \sin^2 {\frac{\fnTheta{∓ τ}}{2}}.
+\end{equation}
+Since $\fnTheta{-} - \fnTheta{+} = τ π$,
+switching either the valley or polarization transforms
+$\sin → \cos$ in \cref{eq:optical},
+leading to the valley selectivity in optical excitations.
+For excitations above the BCS state,
+the transition rate is given by \cref{eq:optical}
+multiplied by a coherence factor $\sin^2 {β_{\vK}}$.
+Thus, the superconducting phase exhibits
+the same strong optical-valley coupling
+for circularly polarized light.
+This is shown in \cref{fig:optical}.
+\begin{figure}
+  \caption{%
+    Optical transition rate matrix elements
+    $\left| P_± \right|
+    =\left| \vc{ϵ}_± · P_+^{+ -} \sin {β} \right|$
+    for \ce{MoSe2}, \ce{WS2}, and \ce{WSe2}.
+    Material parameters are given in~\cite{PhysRevLett.108.196802}
+    and a gap of $Δ_{\vK} = \SI{7.5}{\milli\electronvolt}$
+    is chosen for illustrative purposes.
+  }\label{fig:optical}
+  \includegraphics[width=\columnwidth]{figures/optical-transitions}
+\end{figure}
+
+For a given valley, a chosen polarization of light couples more strongly
+than the other, as is evident comparing $\abs{P_+}$ to $\abs{P_-}$.
+The suppression of the matrix elements above the chemical potential
+reflects the fact that the BCS states include the Fermi distribution.
+As such, the matrix element is still finite,
+but is multiplied by a vanishing occupation probability.
+The key new feature is the suppression of the valley contrast
+as one approaches the chemical potential.
+Nevertheless, for energies where the Cooper pair
+is broken into quasiparticles well above the gap,
+the superconducting state inherits the
+valley selective phenomena of the parent compound.

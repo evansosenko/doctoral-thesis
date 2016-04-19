@@ -1,0 +1,143 @@
+\section{Superconductivity}
+
+We consider two approaches to realizing a superconducting state.
+First, we assume a proximity induced state obtained by
+layering a TMD on a suitable $s$-wave superconductor.
+Second, we consider an intrinsic correlated phase arising
+from density-density interactions.
+
+In this section, we introduce the notation for the
+Fock space creation and annihilation operators,
+with $a^ν_{τ {\s}} \ofK$ corresponding to the tight-binding orbital states,
+and $c^n_{τ {\s}} \ofK$ to the resulting eigenstates of the full Hamiltonian.
+
+\subsection{Induced State}
+
+A proximity $s$-wave superconductor will inject Cooper pairs
+according to %
+\footnote{%
+  Note that all sums over $\vK$ are restricted to $\left| \vK \right|$
+  less than some cutoff that restricts the momentum to a single valley.
+}
+\begin{equation}
+  H^V
+  = ∑_{\vK, ν, τ} \cc{Δ}_ν
+    a^ν_{-τ ↓} \ofMK a^ν_{τ ↑} \ofK + \frac{ε}{2} + \hc
+\end{equation}
+The coupling constants $Δ_ν$ and the overall constant $ε$
+will depend on the material interface.
+Using the abbreviated notation
+$c_{\vK α} = c^-_{τ {\s}} \ofK$,
+with $α =\ ↑↓$ for $τ = {\s} = ±$,
+we project this into the upper-valance bands and obtain the Hamiltonian,
+\begin{multline}
+  \label{eq:induced}
+  P_{τ = {\s}}^{n = -} \left( H^0 + H^V - μ N \right)
+  = ∑_{\vK, α} ξ_{\vK} c_{\vK α}^† c_{\vK α} \\
+  - \sumK \left( \cc{Δ}_{\vK} c_{-\vK ↓} c_{\vK ↑}
+  + Δ_{\vK} c_{\vK ↑}^† c_{-\vK ↓}^† \right)
+  + ε,
+\end{multline}
+where $ξ_{\vK} = E_{+ ↑}^- \of{\abs{\vK}} - μ$ and
+\begin{equation}
+  Δ_{\vK}
+  = \frac{1}{2} \left( Δ_+ + Δ_- \right)
+  + \frac{1}{2} \left( Δ_+ - Δ_- \right)
+    \cos{θ_{\vK}},
+\end{equation}
+with $θ_{\vK} = θ_{+↑}^- \of{\abs{\vK}}$.
+This form is identical to the standard BCS Hamiltonian with
+an effective spin index $α$.
+However, the spin state of the cooper pair is an equal superposition
+of the singlet and the $m = 0$ component of spin triplet.
+The corresponding energies,
+$λ_{\vK} = ± \sqrt{ξ_{\vK}^2 + Δ_{\vK}^2}$,
+and quasiparticle eigenstates,
+$b_{\vK α}
+= α \cos{β_{\vK}} c_{\vK α} + \sin{β_{\vK}} c_{-\vK, -α}^†$,
+with $\cos{2 β_{\vK}} = ξ_{\vK} / λ_{\vK}$,
+follow immediately.
+Note that $Δ_{\vK}$ is a constant and independent of $\vK$
+for $Δ_+ = Δ_-$.
+Even when $Δ_+$ and $Δ_-$ are different,
+the constant term is dominant.
+Before exploring the nature of this state,
+we analyze the case of intrinsic superconductivity,
+and show that the same state is energetically preferred.
+
+\subsection{Intrinsic Phase}
+
+For a local attractive density-density interaction
+(e.g.\ one mediated by phonons), the potential is
+$V ⋍ \frac{1}{2} ∑_{\vR, \vR'} v_{\vR \vR'}
+\normalorder{n_{\vR} n_{\vR'}}$,
+with $v_{\vR \vR'} = v_0 δ_{\vR \vR'}$
+and $n_{\vR}$ the total Wannier electron density at lattice vector $\vR$.
+Projecting to the states near the chemical potential gives
+\begin{multline}
+  \label{eq:channels}
+  P_{τ = {\s}}^{n = -} \left( H^V \right)
+  = \sumKK v \of{\vK' - \vK} \\
+  × \left(
+    A_{\vK \vK'}^2 c_{\vK' ↑}^† c_{-\vK' ↑}^† c_{-\vK ↑} c_{\vK ↑}
+  + A_{\vK' \vK}^2 c_{\vK' ↓}^† c_{-\vK' ↓}^† c_{-\vK ↓} c_{\vK ↓}
+    \right. \\ + \left.
+      2 \abs{A_{\vK \vK'}}^2
+      c_{\vK' ↑}^† c_{-\vK' ↓}^† c_{-\vK ↓} c_{\vK ↑}
+    \vphantom{2 \abs{V_{\vK \vK'}}^2} \right),
+\end{multline}
+where
+\begin{equation}
+  A_{\vK \vK'}
+  = e^{i \left( ϕ_{\vK'} - ϕ_{\vK} \right)}
+    \sin{\frac{θ_{\vK'}}{2}} \sin{\frac{θ_{\vK}}{2}}
+  + \cos{\frac{θ_{\vK'}}{2}} \cos{\frac{θ_{\vK}}{2}}.
+\end{equation}
+The first two terms in \cref{eq:channels} lead to intravalley pairing,
+and the third to intervalley pairing.
+We analyze the possible states within mean field theory.
+The order parameter is
+\begin{equation}
+  Δ_0
+  = v_0 \sumK \cc{g}_{\vK} \ev{c_{-\vK α'} c_{\vK α}},
+\end{equation}
+where the form of $g_{\vK}$ depends on the particular pairing channel.
+The resulting Hamiltonian has the same form as the BCS Hamiltonian in
+\cref{eq:induced}
+but with an effective $Δ_{\vK} = g_{\vK} · Δ_0$.
+The intravalley pairing has three symmetry channels,
+with the couplings given by
+$2 g_{\vK} = 1 +  \cos{θ_{\vK}}$,
+$\sqrt{2} e^{- i ϕ_{\vK}} g_{\vK} = \sin{θ_{\vK}}$
+and $2 e^{- 2 i ϕ_{\vK}} g_{\vK} = 1 - \cos{θ_{\vK}}$.
+For these channels, since
+$\ev{c_{-\vK α} c_{\vK α}} = - \ev{c_{\vK α} c_{-\vK α}}$,
+relabeling $\vK → -\vK$ in the sum gives $Δ_0 = 0$ %
+\footnote{%
+  For complex interactions, where
+  $v \of{\vK} ≠ v \of{-\vK}$,
+  the intravalley order parameters will in general be nonzero.
+}.
+The intervalley pairing also has three symmetry channels:
+$g_{\vK} = \sqrt{2}$,
+$g_{\vK} = \sqrt{2} \cos{θ_{\vK}}$,
+and $g_{\vK} = \sqrt{2} \sin{θ_{\vK}} \vc{\hat{k}}$.
+Of the three,
+the constant valued channel is dominant %
+\footnote{%
+  For example, using the values for \ce{WSe2},
+  $\sin^2 {θ_{\vK}} = 0.44$ and $\cos^2 {θ_{\vK}} = 0.56$
+  at the chemical potential.
+}.
+
+This is to be expected, as the local density-density interaction
+leads to the largest pairing for electrons of opposite spins.
+Since the intravalley processes have the same spin,
+they are disfavored as compared to the intervalley pairing.
+This result further suggests that intravalley pairing requires
+odd parity couplings, which may arise from spin exchange interactions.
+Thus, the key features of the intrinsic superconducting state
+are identical to the proximally induced case, and we restrict further
+analysis to that case.
+We now turn to the question of pair-breaking phenomena
+induced either by optical or magnetic fields.

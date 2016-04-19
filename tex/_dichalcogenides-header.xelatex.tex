@@ -1,0 +1,19 @@
+% Included in header when compiling with XeLaTeX.
+
+% Provide fallback for \symbf.
+\providecommand{\symbf}{\mathbf}
+
+% Load fontspec.
+\usepackage{fontspec}
+
+% UTF-8 math support
+\usepackage{unicode-math}
+
+% PDF bookmarks.
+\usepackage[hidelinks,colorlinks]{hyperref}
+
+% Enables the \cref command.
+\usepackage[noabbrev]{cleveref}
+
+% Define vector style.
+\newcommand{\vect}[1]{\symbf{#1}}

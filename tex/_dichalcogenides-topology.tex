@@ -1,0 +1,59 @@
+\section{Berry curvature}
+
+The Berry curvature in the parent crystal
+for left and right-circularly polarized
+($\vc{ϵ}_±$) optical excitations for a given $\vK$
+is $± 2 Ω_{+ ↑}^+ \of{k}$, where
+\begin{subequations}
+  \begin{align}
+    Ω_{τ {\s}}^n \of{k}
+    & = \vc{\hat{z}} · \vc{Ω}_{τ {\s}}^n \ofK, \\
+    & = - n τ
+        \left[ \frac{1}{2 k} \pderiv{}{k} \fnTheta{n} \right]
+        \sin{\fnTheta{n}}, \\
+    & = - n τ
+        \frac{2 {\left( a t \right)}^2 \left( Δ - λ τ {\s} \right)}
+        {{\left[{\left( 2 a t k \right)}^2
+      + {\left( Δ - λ τ {\s} \right)}^2 \right]}^{3/2}}.
+  \end{align}
+\end{subequations}
+
+The BCS ground state %
+\footnote{%
+  Note that the full ground state
+  also contains the two lower filled bands,
+  but those contribute zero net Berry curvature and may be ignored
+  in this section and the next.}
+is
+\begin{subequations}
+  \begin{align}
+    \Ket{Ω}
+    & = ∏_{\vK} \csc{β_{\vK}} b_{\vK ↑} b_{-\vK ↓} \Ket{0}, \\
+    & = ∏_{\vK} \left( \cos{β_{\vK}} - \sin{β_{\vK}}
+        c_{\vK ↑}^† c_{-\vK ↓}^† \right) \Ket{0}.
+  \end{align}
+\end{subequations}
+This superconducting state is built up
+from the quasiparticle eigenstates,
+$\Ket{\vK}
+= \csc{β_{\vK}} b_{\vK ↑} b_{-\vK ↓} \Ket{0}$,
+of the $\vK$-dependent Hamiltonian
+$λ_{\vK} \left( b_{\vK ↑}^† b_{\vK ↑}
++ b_{-\vK ↓}^† b_{-\vK ↓} \right)$.
+The $z$-component of the Berry curvature of
+the correlated state is zero,
+\begin{equation}
+  \vc{\hat{z}} · i ∇_{\vK} ⨯
+  \Braket{\vK | ∇_{\vK} | \vK}
+  = Ω_{+ ↑}^- \of{k} + Ω_{- ↓}^- \of{-k} = 0.
+\end{equation}
+A single optically excited state in the left valley
+for a given $\vK$ is
+${c_{+ ↑}^+}^† \ofK c_{+ ↑}^- \Ket{\vK}$,
+which has a Berry curvature
+$+2 \sin^6 {β_{\vK}} Ω_{+ ↑}^+ \of{k}$.
+The corresponding excitation in the right valley
+has a Berry curvature of the same magnitude but opposite sign.
+This contrast, combined with the valley selective optical transition rate,
+predicts that the superconducting state
+will also exhibit the valley Hall effect.

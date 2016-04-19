@@ -1,0 +1,96 @@
+% Core packages.
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{microtype}
+
+% For custom title styles.
+\usepackage{titlesec}
+
+% For derivatives and other math commands.
+\usepackage{cool}
+
+% Use serial comma with cleveref.
+\newcommand{\creflastconjunction}{, and\nobreakspace}
+
+% Chemical formulas.
+\usepackage[version=3]{mhchem}
+
+% For Bra-Ket.
+\usepackage{braket}
+
+% Set title styles.
+\titleformat{\section}[runin]
+  {\normalfont\itshape}
+  {\thesection.}{0}{}[:]
+\titlespacing{\section}
+  {0pt}{0.5\baselineskip}{\baselineskip}
+
+\titleformat{\subsection}[runin]
+  {\normalfont\itshape}
+  {\thesection.}{0}{}[:]
+\titlespacing{\subsection}
+  {0pt}{0.5\baselineskip}{\baselineskip}
+
+% Define \abs.
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
+% Swap the definition of \abs* and \abs, so that \abs
+% resizes the size of the brackets and the starred version does not.
+\makeatletter
+\let\oldabs\abs{}
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+\makeatother
+
+%%%%%%%%
+
+
+% Resistances.
+\newcommand{\rNL}{R_{\text{NL}}}
+\newcommand{\rNLeff}{R_{\text{NL}}^{\text{SQ}}}
+\newcommand{\sNL}{S_{\text{NL}}}
+\newcommand{\rSQ}{R_{\text{SQ}}}
+
+%%%%%%%%
+
+% Define the real part function.
+\newcommand{\re}{\operatorname{Re}}
+
+% Complex conjugate.
+\newcommand*\cc[1]{#1^*}
+
+% Text.
+\newcommand{\hc}{\text{h.c.}}
+
+% Shorthand for vector style.
+\newcommand{\vc}{\vect}
+
+% Vectors.
+\newcommand{\vR}{\vect{R}}
+\newcommand{\vK}{\vect{k}}
+
+% Normal ordering.
+\newcommand\normalorder[1]{{:}\mkern1mu#1\mkern1.6mu{:}}
+
+% Spin.
+\newcommand{\s}{s}
+
+% Function arguments.
+\newcommand{\of}[1]{\left(#1\right)}
+\newcommand{\ofK}{\of{\vK}}
+\newcommand{\ofMK}{\of{-\vK}}
+\newcommand{\ev}[1]{\left\langle#1\right\rangle}
+
+% Functions.
+\newcommand{\fnEnergy}[1]{E_{τ {\s}}^{#1}}
+\newcommand{\fnTheta}[1]{θ_{τ {\s}}^{#1} \of{k}}
+
+% Partials
+\newcommand{\sumK}{∑_{\vK}}
+\newcommand{\sumKK}{∑_{\vK, \vK'}}
+
+% Kets
+\newcommand{\ketOrb}[2]{\Ket{v_{τ {\s}}^{#1} #2}}
