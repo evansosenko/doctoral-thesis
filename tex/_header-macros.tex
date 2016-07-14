@@ -1,3 +1,7 @@
+% Paragraph numbers in Introduction.
+\newcounter{intropara}
+\newcommand\introparanum{\par\refstepcounter{intropara}{(\theintropara)}~}
+
 % Define \abs.
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}

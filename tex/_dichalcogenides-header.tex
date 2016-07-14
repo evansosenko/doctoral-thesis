@@ -4,6 +4,7 @@
 \usepackage{mathtools}
 \usepackage{siunitx}
 \usepackage{graphicx}
+\usepackage[english]{babel}
 \usepackage{microtype}
 
 % For custom title styles.
@@ -23,16 +24,20 @@
 
 % Set title styles.
 \titleformat{\section}[runin]
-  {\normalfont\itshape}
+  {\normalfont\itshape} % chktex 6
   {\thesection.}{0}{}[:]
 \titlespacing{\section}
   {0pt}{0.5\baselineskip}{\baselineskip}
 
 \titleformat{\subsection}[runin]
-  {\normalfont\itshape}
+  {\normalfont\itshape} % chktex 6
   {\thesection.}{0}{}[:]
 \titlespacing{\subsection}
   {0pt}{0.5\baselineskip}{\baselineskip}
+
+% Paragraph numbers in Introduction.
+\newcounter{intropara}
+\newcommand\introparanum{\par\refstepcounter{intropara}{(\theintropara)}~}
 
 % Define \abs.
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
@@ -44,17 +49,6 @@
 \let\oldabs\abs{}
 \def\abs{\@ifstar{\oldabs}{\oldabs*}}
 \makeatother
-
-%%%%%%%%
-
-
-% Resistances.
-\newcommand{\rNL}{R_{\text{NL}}}
-\newcommand{\rNLeff}{R_{\text{NL}}^{\text{SQ}}}
-\newcommand{\sNL}{S_{\text{NL}}}
-\newcommand{\rSQ}{R_{\text{SQ}}}
-
-%%%%%%%%
 
 % Define the real part function.
 \newcommand{\re}{\operatorname{Re}}
