@@ -25,6 +25,6 @@
   ],
   "dependencies": {
     "references": "razor-x/references#master",
-    "tikz-nonlocal_spin_valve": "evansosenko/tikz-nonlocal_spin_valve#v1.2"
+    "tikz-nonlocal_spin_valve": "evansosenko/tikz-nonlocal_spin_valve#v1.3"
   }
 }
