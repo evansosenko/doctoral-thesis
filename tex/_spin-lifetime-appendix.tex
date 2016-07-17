@@ -14,8 +14,7 @@ Many of the definitions and results in this section are taken from
 \cite{ActaPhysicaSlovaca.57.4_5.565-907}.
 The chemical potential and spin chemical potential are defined in terms
 of the spin-up and spin-down chemical potentials,
-\begin{subequations}
-  \label{eq:potentials}
+\begin{subequations}\label{eq:potentials}
   \begin{alignat}{2}
     & μ   && = \frac{1}{2} \left( μ_↑ + μ_↓ \right), \\
     & μ_s && = \frac{1}{2} \left( μ_↑ - μ_↓ \right).
@@ -23,8 +22,7 @@ of the spin-up and spin-down chemical potentials,
 \end{subequations}
 The material conductances and polarization are defined in terms
 of the spin-up and spin-down conductances,
-\begin{subequations}
-  \label{eq:conductances}
+\begin{subequations}\label{eq:conductances}
   \begin{alignat}{2}
     & σ   && = σ_↑ + σ_↓, \\
     & σ_s && = σ_↑ - σ_↓, \\
@@ -34,8 +32,7 @@ of the spin-up and spin-down conductances,
   \end{alignat}
 \end{subequations}
 The gradient of the chemical potentials drives a current and spin current,
-\begin{subequations}
-  \label{eq:currents}
+\begin{subequations}\label{eq:currents}
   \begin{alignat}{3}
     & J_{↑↓} && = σ_{↑↓} ∇μ_{↑↓}, \\
     %
@@ -51,8 +48,7 @@ $N$ (normal semiconductor) or $F$ (ferromagnet).
 
 The contact conductances and polarization are defined in terms
 of the spin-up and spin-down contact conductances,
-\begin{subequations}
-  \label{eq:contact_conductances}
+\begin{subequations}\label{eq:contact_conductances}
   \begin{alignat}{2}
     & Σ   && = Σ_↑ + Σ_↓, \\
     & Σ_s && = Σ_↑ - Σ_↓, \\
@@ -63,8 +59,7 @@ of the spin-up and spin-down contact conductances,
 \end{subequations}
 The mismatch of the chemical potentials across the contact
 drives a current and spin current,
-\begin{subequations}
-  \label{eq:contact_currents}
+\begin{subequations}\label{eq:contact_currents}
   \begin{alignat}{2}
     & J_{↑↓}^C && = Σ_{↑↓} {\left( μ^N_{↑↓} - μ^F_{↑↓} \right)}_c, \\
     %
@@ -105,8 +100,7 @@ we adopt the notation for the potentials
 \end{subequations}
 
 We rewrite \cref{eq:contact_currents} as
-\begin{subequations}
-  \label{eq:contact_currents.2}
+\begin{subequations}\label{eq:contact_currents.2}
   \begin{alignat}{3}
     \label{eq:contact_currents.2.current}
     & J_c && = Σ   \left( v_c - ψ_c \right) && + Σ_s \left( u_c - φ_c \right),
@@ -181,8 +175,7 @@ Here, $λ_F = 1 / k_F$ is the spin diffusion length in the ferromagnet.
 \subsubsection{Continuity assumptions}
 
 At the contact, the current and spin current are assumed continuous,
-\begin{subequations}
-  \label{eq:continuity.current}
+\begin{subequations}\label{eq:continuity.current}
   \begin{alignat}{3}
     & J_c && = J^F_c && = J^N_c, \\
     & ȷ_c && = ȷ^F_c && = ȷ^N_c.
@@ -191,8 +184,7 @@ At the contact, the current and spin current are assumed continuous,
 Using
 \cref{eq:bdry_current.ferromagnet,eq:bdry_current_contact,eq:continuity.current}
 we find the relation
-\begin{subequations}
-  \label{eq:bdry_solutions}
+\begin{subequations}\label{eq:bdry_solutions}
   \begin{equation}
     \label{eq:bdry_solutions.current}
     \left( P_σ^F R_F + P_Σ^i R_C^i \right) J_c
@@ -208,8 +200,7 @@ we find the relation
 \end{subequations}
 In the special case of zero current at the contact ($J_c = 0$),
 \cref{eq:bdry_solutions} reduces to
-\begin{subequations}
-  \label{eq:bdry_solutions.zero}
+\begin{subequations}\label{eq:bdry_solutions.zero}
   \begin{alignat}{2}
     \label{eq:bdry_solutions.zero.current}
     & ȷ_c && = \frac{1}{R_F + R_C^i} u_c,
@@ -368,8 +359,7 @@ We now require a boundary condition on $∇u$,
 but $∇u$ cannot be assumed continuous at the contact.
 We make the assumption that the total spin current at the contact
 is the sum of the spin currents on either side, i.e.,
-\begin{subequations}
-  \label{eq:current.sum}
+\begin{subequations}\label{eq:current.sum}
   \begin{alignat}{2}
     & ȷ_0 && = σ^N \left[ - u_-'(0) + u_0'(0) \right], \\
     & ȷ_L && = σ^N \left[ - u_0'(L) + u_+'(L) \right].
@@ -421,8 +411,7 @@ $u_x (L) = e^{- κ L} B^- + e^{- \bar{κ} L} C^-$.
 Finally, by using $p_1 = - σ^N Δ / J_0$ along with \cref{eq:rnl.full},
 we can introduce $\rSQ$ from \cref{eq:square_resistance}
 and the polarizations
-\begin{subequations}
-  \label{eq:polarizations}
+\begin{subequations}\label{eq:polarizations}
   \begin{align}
     p_1 & = \frac{P_σ^F R_F + P_Σ^L R_C^L}{R_F + R_C^L}, \\
     p_2 / p_1 & = \left. \left( 1 - \frac{P_σ^F R_F}{P_Σ^L R_C^L} \right) \middle/
