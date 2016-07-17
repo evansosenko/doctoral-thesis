@@ -25,8 +25,8 @@ of the spin-up and spin-down conductances,
 \begin{subequations}\label{eq:conductances}
   \begin{alignat}{2}
     & σ   && = σ_↑ + σ_↓, \\
-    & σ_s && = σ_↑ - σ_↓, \\
-    %
+    & σ_s && = σ_↑ - σ_↓,
+    \\
     \label{eq:material.polarization}
     & P_σ && = \frac{σ_s}{σ}.
   \end{alignat}
@@ -34,11 +34,11 @@ of the spin-up and spin-down conductances,
 The gradient of the chemical potentials drives a current and spin current,
 \begin{subequations}\label{eq:currents}
   \begin{alignat}{3}
-    & J_{↑↓} && = σ_{↑↓} ∇μ_{↑↓}, \\
-    %
+    & J_{↑↓} && = σ_{↑↓} ∇μ_{↑↓},
+    \\
     \label{eq:currents.current}
-    & J      && = J_↑ + J_↓ & = σ   ∇μ + σ_s ∇μ_s, \\
-    %
+    & J      && = J_↑ + J_↓ & = σ   ∇μ + σ_s ∇μ_s,
+    \\
     \label{eq:currents.spincurrent}
     & J_s    && = J_↑ - J_↓ & = σ_s ∇μ + σ   ∇μ_s.
   \end{alignat}
@@ -51,8 +51,8 @@ of the spin-up and spin-down contact conductances,
 \begin{subequations}\label{eq:contact_conductances}
   \begin{alignat}{2}
     & Σ   && = Σ_↑ + Σ_↓, \\
-    & Σ_s && = Σ_↑ - Σ_↓, \\
-    %
+    & Σ_s && = Σ_↑ - Σ_↓,
+    \\
     \label{eq:contact.polarization}
     & P_Σ && = \frac{Σ_s}{Σ}.
   \end{alignat}
@@ -62,7 +62,6 @@ drives a current and spin current,
 \begin{subequations}\label{eq:contact_currents}
   \begin{alignat}{2}
     & J_{↑↓}^C && = Σ_{↑↓} {\left( μ^N_{↑↓} - μ^F_{↑↓} \right)}_c, \\
-    %
     & J^C      && = J_↑^C + J_↓^C, \\
     & J_s^C    && = J_↑^C - J_↓^C.
   \end{alignat}
@@ -157,7 +156,7 @@ $\lim_{z' → - ∞} φ(z') = 0$
 has solution
 \begin{equation}
   \label{eq:diffusion.ferromagnet.solution}
-  φ(z') = φ_c e^{k_F z'} ,
+  φ(z') = φ_c e^{k_F z'},
 \end{equation}
 where $φ_c = φ(0)$ is a yet undetermined constant.
 Putting this into \cref{eq:bdry_current} and evaluating it at the contact gives
@@ -216,7 +215,7 @@ In the special case of zero current at the contact ($J_c = 0$),
 In this section we derive the precise relation between $\rNL$ and $μ_s^N (L)$.
 Note that we may write in general, for some $\bar{μ}$,
 \begin{equation}
-  μ = \bar{μ} + P_σ μ_s ,
+  μ = \bar{μ} + P_σ μ_s,
 \end{equation}
 and, following
 \cite{PhysRevB.67.052409},
@@ -236,7 +235,10 @@ where $I_0 = - W L J_0 / e$ is the current through the contact at $x = 0$.
 It is convenient to introduce the effective nonlocal resistance $\rNLeff$
 defined by
 \begin{equation}
-  \rNLeff = W L \rNL = - e V_L / J_0 = \frac{\bar{μ}_c^F - \bar{μ}_c^N}{J_0}.
+  \rNLeff
+  = W L \rNL
+  = - e V_L / J_0
+  = \frac{\bar{μ}_c^F - \bar{μ}_c^N}{J_0}.
 \end{equation}
 To determine $\rNL$, we must express the difference
 of these chemical potentials in terms of $μ_s^N (L)$.
@@ -256,11 +258,12 @@ The physical restriction on the current flow in the semiconductor
 is imposed by noting that since $σ_s^N = 0$,
 \cref{eq:currents.current} gives $J^N = σ^N ∇v$, so we must have
 \begin{equation}
-  v_x (x) =
-    \begin{cases}
-      v_x (0) - \left( J_0 / σ^N \right) x & \text{~for~} x ≤ 0, \\
-      v_x (0)                              & \text{~for~} x > 0,
-    \end{cases}
+  v_x (x)
+  =
+  \begin{cases}
+    v_x (0) - \left( J_0 / σ^N \right) x & \text{~for~} x ≤ 0, \\
+    v_x (0)                              & \text{~for~} x > 0,
+  \end{cases}
 \end{equation}
 $v_y (x) = v_y (0)$, and $v_z (x) = v_z (0)$.
 
@@ -277,12 +280,14 @@ $e V_c = v_x (0) - \left( ψ_c - P_σ^F φ_c \right)$,
 \begin{subequations}
   \begin{align}
     & \begin{aligned}
-        ψ^0 \left( z' \right) & = - e V_0 + P_σ^F φ_0 \left( 2 - e^{k_F z'} \right) \\
-                              & \qquad + v_x (0) + \left( J_0 / σ^F \right) z',
+        ψ^0 \left( z' \right)
+        & = - e V_0 + P_σ^F φ_0 \left( 2 - e^{k_F z'} \right) \\
+        & \qquad + v_x (0) + \left( J_0 / σ^F \right) z',
       \end{aligned} \\
     & \begin{aligned}
-        ψ^L \left( z' \right) & = - e V_L + P_σ^F φ_L \left( 2 - e^{k_F z'} \right) \\
-                              & \qquad + v_x (0).
+        ψ^L \left( z' \right)
+        & = - e V_L + P_σ^F φ_L \left( 2 - e^{k_F z'} \right) \\
+        & \qquad + v_x (0).
       \end{aligned}
   \end{align}
 \end{subequations}
@@ -297,8 +302,10 @@ and with
 we find
 \begin{equation}
   \label{eq:rnl.full}
-  \rNLeff = \left( ψ_L - v_L \right) - P_σ^F φ_L
-          = \left[ P_Σ^L \left( 1 - \frac{R_F}{R_F + R_C^L} \right) - \frac{P_σ^F R_F}{R_F + R_C^L} \right] \frac{u_x (L)}{J_0}.
+  \rNLeff
+  = \left( ψ_L - v_L \right) - P_σ^F φ_L
+  = \left[ P_Σ^L \left( 1 - \frac{R_F}{R_F + R_C^L} \right)
+  - \frac{P_σ^F R_F}{R_F + R_C^L} \right] \frac{u_x (L)}{J_0}.
 \end{equation}
 
 \subsection{Diffusion equation}
@@ -320,12 +327,13 @@ The spin diffusion length in the semiconductor is $λ = 1 / k = \sqrt{D τ}$.
 The function $u = u(x)$ only varies along $x$,
 and we introduce the notation
 \begin{equation}
-  u_x (x) =
-    \begin{cases}
-      u_{x-} (x) \text{~for~} x < 0    , \\
-      u_{x0} (x) \text{~for~} 0 ≤ x ≤ L, \\
-      u_{x+} (x) \text{~for~}     L < x,
-    \end{cases}
+  u_x (x)
+  =
+  \begin{cases}
+    u_{x-} (x) \text{~for~} x < 0, \\
+    u_{x0} (x) \text{~for~} 0 ≤ x ≤ L, \\
+    u_{x+} (x) \text{~for~}     L < x,
+  \end{cases}
 \end{equation}
 with similar expressions for $u_y$ and $u_z$.
 The most general solution to \cref{eq:diffusion}
@@ -340,12 +348,17 @@ The requirement $\lim_{x → ± ∞} u(x) = 0$ yields
 and
 \begin{subequations}
   \begin{alignat}{6}
-    & u_{x±} (x) && =   && B^∓ e^{∓ κ x} && {}+{} &&   && C^∓ e^{∓ \bar{κ} x}, \\
+    & u_{x±} (x) && =   && B^∓ e^{∓ κ x} && {}+{} &&   && C^∓ e^{∓ \bar{κ} x},
+    \\
     & u_{y±} (x) && = i && B^∓ e^{∓ κ x} && {}-{} && i && C^∓ e^{∓ \bar{κ} x},
   \end{alignat}
   \begin{alignat}{12}
-    & u_{x0} (x) && =   && B_0^+ e^{κ x} && {}+{} &&   && B_0^- e^{- κ x} && {}+{} &&   && C_0^+ e^{\bar{κ} x} && {}+{} &&   && C_0^- e^{- \bar{κ} x}, \\
-    & u_{y0} (x) && = i && B_0^+ e^{κ x} && {}+{} && i && B_0^- e^{- κ x} && {}-{} && i && C_0^+ e^{\bar{κ} x} && {}-{} && i && C_0^- e^{- \bar{κ} x},
+    & u_{x0} (x) &&
+    = && B_0^+ e^{κ x} && {}+{} &&   && B_0^- e^{- κ x} && {}+{} &&
+      && C_0^+ e^{\bar{κ} x} && {}+{} &&   && C_0^- e^{- \bar{κ} x}, \\
+    & u_{y0} (x) &&
+    = i && B_0^+ e^{κ x} && {}+{} && i && B_0^- e^{- κ x} && {}-{} && i
+      && C_0^+ e^{\bar{κ} x} && {}-{} && i && C_0^- e^{- \bar{κ} x},
   \end{alignat}
 \end{subequations}
 where $κ = k \sqrt{1 + i ω τ}$.
@@ -385,8 +398,8 @@ Together with \cref{eq:current.sum}, this gives the other six equations,
 where
 \begin{subequations}
   \begin{alignat}{2}
-  & η_i^{-1} && = - σ^N \left( R_F + R_C^i \right), \\
-  & Δ && = - (- J_0) \left( P_σ^F R_F + P_Σ^0 R_C^0 \right) η_0.
+    & η_i^{-1} && = - σ^N \left( R_F + R_C^i \right), \\
+    & Δ && = - (- J_0) \left( P_σ^F R_F + P_Σ^0 R_C^0 \right) η_0.
   \end{alignat}
 \end{subequations}
 We define the $r$-parameter, $r_i = - η_i^{-1}$,
@@ -413,9 +426,13 @@ we can introduce $\rSQ$ from \cref{eq:square_resistance}
 and the polarizations
 \begin{subequations}\label{eq:polarizations}
   \begin{align}
-    p_1 & = \frac{P_σ^F R_F + P_Σ^L R_C^L}{R_F + R_C^L}, \\
-    p_2 / p_1 & = \left. \left( 1 - \frac{P_σ^F R_F}{P_Σ^L R_C^L} \right) \middle/
-                  \left(1 + \frac{P_σ^F R_F}{P_Σ^L R_C^L} \right) \right. ,
+    p_1
+    & = \frac{P_σ^F R_F + P_Σ^L R_C^L}{R_F + R_C^L}, \\
+    p_2 / p_1
+    & = \left.
+        \left( 1 - \frac{P_σ^F R_F}{P_Σ^L R_C^L} \right) \middle/
+        \left( 1 + \frac{P_σ^F R_F}{P_Σ^L R_C^L} \right)
+        \right.,
   \end{align}
 \end{subequations}
 to write
