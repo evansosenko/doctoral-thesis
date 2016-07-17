@@ -38,7 +38,7 @@ $μ_s = \left( μ_↑ - μ_↓ \right) / 2$ at $x = L$.
 The spin accumulation in the semiconductor
 is assumed to satisfy the steady-state Bloch diffusion equation
 \begin{equation}
-  D ∇^2 μ_s^N - \frac{μ_s^N}{τ} + ω × μ_s^N = 0 .
+  D ∇^2 μ_s^N - \frac{μ_s^N}{τ} + ω × μ_s^N = 0.
 \end{equation}
 The key parameters are
 the contact spacing $L$,
@@ -56,7 +56,7 @@ and the continuity of the current and spin current.
 A detailed derivation is given in \cref{s:appendix} and reveals
 \begin{equation}
   \label{eq:nonlocal_resistance}
-  \rNL^± = ± p_1 p_2 R_N f .
+  \rNL^± = ± p_1 p_2 R_N f.
 \end{equation}
 The overall sign corresponds to
 parallel and antiparallel ferromagnetic alignments.
@@ -73,13 +73,16 @@ and the function
             \sinh{ \left[ \left( L / λ \right) \sqrt{1 + i ω τ} \right] }
           }{\sqrt{1 + i ω τ}}
         }
-        2 \left[ \sqrt{1 + i ω τ} + \frac{λ}{2} \left( \frac{1}{r_0} + \frac{1}{r_L} \right) \right]
+        2 \left[ \sqrt{1 + i ω τ}
+                 + \frac{λ}{2}
+                   \left( \frac{1}{r_0} + \frac{1}{r_L} \right)
+        \right]
         e^{\left( L / λ \right) \sqrt{1 + i ω τ}}
-        \right. \right. \\ \left. \left.
+        \right. \right. \\ \left. {\left.
         + \frac{λ^2}{r_0 r_L} \frac{
             \sinh{ \left[ \left( L / λ \right) \sqrt{1 + i ω τ} \right] }
           }{\sqrt{1 + i ω τ}}
-      \right\}^{-1} \right) .
+      \right\}}^{-1} \right).
 \end{multline}
 
 Note that $f$ is unitless and depends only on the scales
@@ -124,11 +127,11 @@ We combine $P^2 = \abs{p_1 p_2}$
 and write
 \begin{equation}
   \label{eq:nonlocal_resistance.difference}
-  Δ \rNL = 2 P^2 R_N \abs{f} ,
+  Δ \rNL = 2 P^2 R_N \abs{f},
 \end{equation}
 with
 \begin{equation}
-  R_N = \frac{λ}{W} \frac{1}{σ_G} ,
+  R_N = \frac{λ}{W} \frac{1}{σ_G},
 \end{equation}
 where $σ_G = σ^N L$ is the graphene conductance normally given in units of
-$\si{\milli\siemens} = \left( \si{\milli\ohm} \right)^{-1}$.
+$\si{\milli\siemens} = {\left( \si{\milli\ohm} \right)}^{-1}$.
