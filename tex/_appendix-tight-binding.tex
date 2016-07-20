@@ -1,0 +1,132 @@
+In this appendix,
+we review the assumptions of the tight-binding model
+as derived from Bloch's theorem.
+We denote the position and momentum operators
+respectively by $\vc{Q}$ and $\vc{P}$.
+
+\section{Transition Operators}
+
+We first define the position-space translation operator,
+$T \of{\vc{r}} = e^{- i \vc{r} · \vc{P}}$,
+and the momentum-space translation operator
+$T_{\vK} = e^{- i \vc{k} · \vc{Q}}$.
+We assume zero magnetic field.%
+\footnote{%
+  For nonzero field, however, much of the following can be recast
+  in terms of the magnetic translation operators.
+  % TODO Add references.
+}
+Each has a simple inverse:
+$T^{-1} \of{\vc{r}} = T \of{- \vc{r}}$
+and
+$T_{\vK}^{-1} = T_{- \vK}$.
+We also note the derivatives:
+$∇_{\vK} T_{\vK} = - i \vc{Q} T_{\vK}$
+and
+$∇_{\vK} T^{-1}_{\vK} = i \vc{Q} T^{-1}_{\vK}$.
+
+We can compute a useful commutation relation of these translations operators.
+Application of the Baker–Campbell–Hausdorff formula gives
+\begin{subequations}
+  \begin{align}
+    T \of{\vc{r}} T_{\vK}
+      & = e^{- i \left( \vc{r} · \vc{P} + \vc{k} · \vc{Q} \right)
+          - \frac{1}{2} \left[ \vc{r} · \vc{P}, \vc{k} · \vc{Q} \right]}, \\
+    %
+    T_{\vK} T \of{\vc{r}}
+      & = e^{- i \left( \vc{r} · \vc{P} + \vc{k} · \vc{Q} \right)
+          + \frac{1}{2} \left[ \vc{r} · \vc{P}, \vc{k} · \vc{Q} \right]}.
+  \end{align}
+\end{subequations}
+Only a single commutator appears above since
+$\left[ \vc{r} · \vc{P}, \vc{k} · \vc{Q} \right] = - i \vc{r} · \vc{k}$,
+and substituting this in above we see
+\begin{equation}
+  \label{eq:translations:commutation}
+  T \of{\vc{r}} T_{\vK}
+  = e^{-i \vc{r} · \vc{k}} T_{\vK} T \of{\vc{r}}.
+\end{equation}
+
+\section{Bloch Hamiltonian}
+
+Given a Hamiltonian $H$ and a set of $N$ lattice vectors
+$\left\{ \vRn{n} \right\}$ such that the Hamiltonian
+commutes with each $T \of{\vRn{n}}$,
+we may choose a set of common eigenvectors according to Bloch's theorem,
+\begin{subequations}
+  \begin{align}
+    H \Ket{ψ_{n \vK}}
+      & = E_{n \vK} \Ket{ψ_{n \vK}}, \\
+    T \of{\vRn{m}} \Ket{ψ_{n \vK}}
+      & = e^{-i \vK · \vRn{m}} \Ket{ψ_{n \vK}}.
+  \end{align}
+\end{subequations}
+Given periodic boundary conditions,
+the set of allowed $\vK$ becomes countable
+and may be restricted to the first Billouin zone
+due to the periodicity of the eigenvalues
+with respect to translation by a reciprocal lattice vector $\vG$.
+For each $\vK$, the transformation
+$\Ket{u_{n \vK}} = T_{\vK} \Ket{ψ_{n \vK}}$
+gives a set of states which are invariant under lattice translations, i.e.,
+using \cref{eq:translations:commutation},
+$T \of{\vRn{m}} \Ket{u_{n \vK}} = \Ket{u_{n \vK}}$.
+A general operator then transforms according to
+\begin{equation*}
+  A_{\vK} = T_{\vK} A T_{\vK}^{-1}.
+\end{equation*}
+
+Note that the derivative of a transformed operator may be computed as
+\begin{equation}
+  ∇_{\vK} A_{\vK}
+    = ∇_{\vK} \left( T_{\vK} A T_{\vK}^{-1} \right)
+    = i \left[ A_{\vK}, \vc{Q} \right].
+\end{equation}
+
+\section{Tight Binding Model}
+
+In the tight biding model, one assumes there exists a finite set
+$\left\{ \Ket{φ_ν} \right\}$ of relevant atomic orbitals.
+The corresponding Bloch orbital states,
+\begin{equation}
+  \Ket{ϕ_{ν \vK}}
+  = \frac{1}{\sqrt{N}}
+    ∑_{n = 1}^N e^{i \vK ⋅ \vRn{n}}
+    T \of{\vRn{n}} \Ket{φ_ν},
+\end{equation}
+provide a complete bases for the space
+of Bloch eigenstates $\left\{ \Ket{ψ_{n \vK}} \right\}$, i.e.,
+\begin{subequations}
+  \begin{align}
+    \Ket{ψ_{n \vK}} & = ∑_ν M_{\vK}^{ν n} \Ket{ϕ_{ν \vK}}, \\
+    \Ket{ϕ_{ν \vK}} & = ∑_n W_{\vK}^{n ν} \Ket{ψ_{n \vK}},
+  \end{align}
+\end{subequations}
+with $M_{\vK}^{ν n} = \cc{W}_{\vK}^{ν n}$.
+The second overlap term in
+\begin{equation}
+  \Braket{ϕ_{ν' \vK} | ϕ_{ν \vK}}
+  = \Braket{φ_{ν'} | φ_ν}
+    + ∑_{\vRn{n} ≠ 0}^N e^{i \vK ⋅ \vRn{n}}
+    \Braket{φ_{ν'} | T \of{\vRn{n}} | φ_ν},
+\end{equation}
+is small, thus the states
+$\left\{ \Ket{φ_ν} \right\}$ are assumed formally orthonormal.
+
+Since each $\Ket{ϕ_{n k}}$ satisfies
+\begin{equation}
+  T \of{\vRn{m}} \Ket{ϕ_{ν \vK}}
+  = e^{-i \vK · \vRn{m}} \Ket{ϕ_{ν \vK}},
+\end{equation}
+the transformed orbital states
+$\Ket{v_{n \vK}} = T_{\vK} \Ket{ϕ_{n k}}$
+are invariant under lattice translations.
+One typically knows the matrix elements
+of an effective Hamiltonian
+in the bases of these periodic Bloch orbitals,
+\begin{equation}
+  H_{\vK}^{ν ν'}
+  = \Braket{v_{ν \vK} | H_{\vK} | v_{ν' \vK}}
+  = ∑_n \cc{W}_{\vK}^{n ν} E_{n \vK} W_{\vK}^{n ν'},
+\end{equation}
+which determines the coefficients $M_{\vK}^{ν n}$.
