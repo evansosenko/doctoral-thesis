@@ -302,10 +302,10 @@ and the individual channels and their weights are summarized in
 The order parameter is
 \begin{equation}
   \label{eq:intrinsic:gap}
-  Δ_0 = v_0 \sumK \cc{g}_{\vK} \ev{c_{-\vK γ'} c_{\vK γ}},
+  χ_0 = v_0 \sumK \cc{g}_{\vK} \ev{c_{-\vK γ'} c_{\vK γ}},
 \end{equation}
-thus $Δ_{\vK} = f_{\vK} · Δ_0$.
-Note that we allow $f_{\vK}$, $g_{\vK}$, and $Δ_0$
+thus $Δ_{\vK} = f_{\vK} · χ_0$.
+Note that we allow $f_{\vK}$, $g_{\vK}$, and $χ_0$
 to be either scalar or vector quantities.
 
 The Hamiltonian in \cref{eq:intrinsic:projected:channel}
@@ -367,7 +367,7 @@ With this, \Cref{eq:intrinsic:gap} becomes
 \begin{equation}
   \label{eq:intrinsic:gap:general}
   \begin{aligned}
-    Δ_0
+    χ_0
     & = v_0 \sumK \cc{g}_{\vK}
         \left( - \frac{1}{2} e^{i \arg{Δ_{\vK}}} \sin{2 β_{\vK}} \right), \\
     & = \frac{v_0}{2} \sumK \cc{g}_{\vK}
@@ -375,7 +375,7 @@ With this, \Cref{eq:intrinsic:gap} becomes
     & = \frac{v_0}{2} \sumK \cc{g}_{\vK}
         \frac{Δ_{\vK}}{λ_{\vK}}, \\
     & = \frac{v_0}{2} \sumK \cc{g}_{\vK}
-        \frac{f_{\vK} · Δ_0}{λ_{\vK}}.
+        \frac{f_{\vK} · χ_0}{λ_{\vK}}.
   \end{aligned}
 \end{equation}
 
@@ -392,7 +392,7 @@ the integral over $ϕ$ is trival and yields a factor of $2 π$.
   1
   = π v_0 ∫_{-ω}^{ω}
   \frac{\abs{f \of{ξ}}^2 \abs{ρ \of{ξ}} \dif ξ}
-  {\sqrt{ξ'^2 + \abs{f \of{ξ}}^2 \abs{Δ_0}^2}},
+  {\sqrt{ξ'^2 + \abs{f \of{ξ}}^2 \abs{χ_0}^2}},
 \end{equation}
 where $ω < λ$ is the energy cutoff around the chemical potential
 and the density of states is
@@ -406,14 +406,14 @@ and the density of states is
 
 For the intervalley vector channels,
 $f_{\vK} = g_{\vK} = \sqrt{2} \sin{θ_{\vK} \vc{\hat{k}}}$
-and $Δ_0 = \left( \abs{Δ_0} / \sqrt{2} \right)
+and $χ_0 = \left( \abs{χ_0} / \sqrt{2} \right)
 \left( \hat{e}_1 + i \hat{e}_2 \right)$
 for some fixed unit vectors $\hat{e}_1$ and $\hat{e}_2$.
 We consider two cases:
 $\hat{e}_1 ∥ \hat{e}_2$ or $\hat{e}_1 ⊥ \hat{e}_2$.
 
 When $\hat{e}_1 ∥ \hat{e}_2$,
-write $Δ_0 = \abs{Δ_0} \hat{e} e^{i ϕ_0}$
+write $χ_0 = \abs{χ_0} \hat{e} e^{i ϕ_0}$
 and $\vc{\hat{k}} · \hat{e} = \cos{\left( ϕ_{\vK} - ϕ_e \right)}$
 so \cref{eq:intrinsic:gap:general} reads
 \begin{equation}
@@ -428,7 +428,7 @@ Dotting both sides with $\hat{e}$ and converting to integral form,
   1
   = \frac{v_0}{2} ∫_{-ω}^{ω} ∫_{0}^{2 π}
   \frac{\abs{f \of{ξ}}^2 \cos^2{ϕ} \abs{ρ \of{ξ}} \dif ϕ \dif ξ}
-  {\sqrt{ξ^2 + \abs{f \of{ξ}}^2 \abs{Δ_0}^2 \cos^2{ϕ}}},
+  {\sqrt{ξ^2 + \abs{f \of{ξ}}^2 \abs{χ_0}^2 \cos^2{ϕ}}},
 \end{equation}
 where as expected by symmetry,
 the integral has been made independent of the direction of $\hat{e}$
@@ -457,12 +457,12 @@ and dotting both sides by $\hat{e}_1 - i \hat{e}_2$ gives
 \begin{equation}
   2
   = \frac{v_0}{2} \sumK \frac{\abs{f_{\vK}}^2}
-    {\sqrt{ξ_{\vK}^2 + \left( 1 / 2 \right) \abs{f_{\vK}}^2 \abs{Δ_0}^2}}.
+    {\sqrt{ξ_{\vK}^2 + \left( 1 / 2 \right) \abs{f_{\vK}}^2 \abs{χ_0}^2}}.
 \end{equation}
 and converting to integral form,
 \begin{equation}
   1
   = \frac{π v_0}{2} ∫_{-ω}^{ω}
   \frac{\abs{f \of{ξ}}^2 \abs{ρ \of{ξ}} \dif ξ}
-  {\sqrt{ξ^2 + \left( 1 / 2 \right) \abs{f \of{ξ}}^2 \abs{Δ_0}^2}}.
+  {\sqrt{ξ^2 + \left( 1 / 2 \right) \abs{f \of{ξ}}^2 \abs{χ_0}^2}}.
 \end{equation}
