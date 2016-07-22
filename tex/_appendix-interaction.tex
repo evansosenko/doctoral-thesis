@@ -14,10 +14,9 @@ $v \of{\vc{x}, \vc{x}'}$ which depends on the positions
 $\vc{x}$ and $\vc{x}'$ of a pair of particles
 \cite{ballentine1998quantum}.
 In a multiparticle system of dimension $d$ with no self-interaction,
-this may be written as an additive pair operator
+the interaction $V$ may be written as an additive pair operator
 in a given bases of fermionic Fock operators,
 $C_α^† \Ket{0} = \Ket{α} = \Ket{f_α} ⊗ \Ket{σ_α}$,
-as
 \begin{equation}
   \label{eq:interaction:general}
   \begin{aligned}
@@ -32,18 +31,17 @@ as
 Here, $\Ket{α β} = \left( \Ket{α} \Ket{β}
 - \Ket{β} \Ket{α} \right) / \sqrt{2}$,
 and we introduce the symbol
-\begin{multline}
+\begin{align}
   v_{α β, γ δ} % chktex 19
-  = \left( \Bra{f_α} \Bra{f_β} \right) v
-    \left( \Ket{f_γ} \Ket{f_δ} \right) % chktex 19
-    \Braket{σ_α | σ_γ} \Braket{σ_β | σ_δ}, \\ % chktex 19
-  = δ_{σ_α σ_γ} δ_{σ_β σ_δ} % chktex 19
-    ∫ \cc{f}_α \of{\vc{x}} \cc{f}_β \of{\vc{x}'} v % chktex 19
-    \of{\vc{x}, \vc{x}'} f_γ \of{\vc{x}} f_δ \of{\vc{x}'} % chktex 19
-    \dif^d \vc{x} \dif^d \vc{x}',
-\end{multline}
+  & = \left( \Bra{f_α} \Bra{f_β} \right) v
+      \left( \Ket{f_γ} \Ket{f_δ} \right) % chktex 19
+      \Braket{σ_α | σ_γ} \Braket{σ_β | σ_δ}, \\ % chktex 19
+  & = δ_{σ_α σ_γ} δ_{σ_β σ_δ} % chktex 19
+      ∫ \cc{f}_α \of{\vc{x}} \cc{f}_β \of{\vc{x}'} v % chktex 19
+      \of{\vc{x}, \vc{x}'} f_γ \of{\vc{x}} f_δ \of{\vc{x}'} % chktex 19
+      \dif^d \vc{x} \dif^d \vc{x}',
+\end{align}
 so that $\Braket{α β | v | γ δ} = v_{α β, γ δ} - v_{α β, δ γ}$. % chktex 19
-
 For a given interaction, the explicit form of $V$
 depends on the choice of basis states.
 For illustration, we consider
@@ -167,7 +165,7 @@ and switch back to the Bloch representation,
     ∑_{\vc{q}}
     \tilde{v}^{ν ν'}_{\vc{q}} \\
     δ \left[ \vc{q} - \left(\vK - \bar{\vK} \right) \right] % chktex 19
-    δ \left[ \vc{q} - \left(\bar{\vK}' - \vK' \right) \right] \\ % chktex 19
+    δ \left[ \vc{q} - \left(\bar{\vK}' - \vK' \right) \right] % chktex 19
     a_{\bar{\vK} ν σ}^† a_{\bar{\vK}' ν' σ'}^†
     a_{\vK' ν' σ'} a_{\vK ν σ}.
 \end{multline}
