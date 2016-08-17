@@ -585,3 +585,146 @@ Thus, we neglect the second term above and obtain
 \begin{equation}
   \ev{\vc{S}^2} = \sumK \cos^2 {β_{\vK}}.
 \end{equation}
+
+\section{Berry Curvature}
+
+\subsection{Normal States}
+
+For all normal eigenstates, the band resolved Berry curvature is
+\begin{equation}
+  \vc{Ω}_{τ σ}^n \ofK
+  = i ∇_{\vK} ⨯
+    \Braket{u_{τ σ}^n \ofK | ∇_{\vK} | u_{τ σ}^n \ofK}.
+\end{equation}
+
+This can be computed directly by first considering
+\begin{multline}
+  \Braket{u_{τ σ}^n \ofK | ∇_{\vK} | u_{τ σ}^n \ofK} \\
+  = ∑_ν
+    \cc{M}_{τ σ}^{ν n} \ofK
+    ∇_{\vK} M_{τ σ}^{ν n} \ofK \\
+  + ∑_{ν, ν'}
+    \cc{M}_{τ σ}^{ν n} \ofK
+    M_{τ σ}^{ν' n} \ofK
+    \Braket{v_{τ σ}^ν \ofK | ∇_{\vK} | v_{τ σ}^{ν'} \ofK}.
+\end{multline}
+The second term is effectively zero by an argument
+similar to the one given for the optical approximation above.
+Using the identities
+\begin{subequations}
+  \begin{align}
+    \pderiv{}{k} M_{τ σ}^{ν n} \ofK
+    & = n τ \pderiv{}{k} \fnTheta{n}, \\
+    \pderiv{}{ϕ} M_{τ σ}^{ν n} \ofK
+    & = i τ M_{τ σ}^{ν n} \ofK δ_{ν, -1},
+  \end{align}
+\end{subequations}
+gives the $z$-component of the curvature,
+\begin{subequations}
+  \begin{align}
+    Ω_{τ σ}^n \of{k}
+    & = \vc{\hat{z}} · \vc{Ω}_{τ σ}^n \ofK \\
+    & = - n τ
+      \left[ \frac{1}{2 k} \pderiv{}{k} \fnTheta{n} \right]
+      \sin{\fnTheta{n}}, \\
+    & = - n τ
+      \frac{2 {(a t)}^2 (Δ - λ τ σ)}
+      {{\left[{(2 a t k)}^2 + {(Δ - λ τ σ)}^2 \right]}^{3/2}}.
+  \end{align}
+\end{subequations}
+
+The Berry curvature of left and right circularly polarized
+($\vc{ϵ_±}$) optical excitations for a given $\vK$
+then follows to be $± 2 Ω_{+ ↑}^+ \of{k}$.
+
+\subsection{BCS States}
+
+For simplicity,
+we consider the case where $γ = - γ' = +1$
+and $Δ_{\vK}$ is real in the BCS Hamiltonian in
+\cref{eq:hamiltonian:bcs:general}.
+The BCS ground states is
+\begin{subequations}
+  \begin{align}
+    \Ket{Ω}
+    & = ∏_{\vK} \csc{β_{\vK}} b_{\vK ↑} b_{-\vK ↓} \Ket{0}, \\
+    & = ∏_{\vK} \left( \cos{β_{\vK}} - \sin{β_{\vK}}
+        c_{\vK ↑}^† c_{-\vK ↓}^† \right) \Ket{0}.
+  \end{align}
+\end{subequations}%
+\footnote{%
+  Note that the full ground state
+  also contains the lower two filled bands,
+  but those contribute zero net Berry curvature and may be ignored
+  in this section and the next.}
+This BCS ground state may be viewed as built up
+from the single-quasiparticle eigenstates,
+\begin{equation}
+  \Ket{\vK}
+  = \csc{β_{\vK}} b_{\vK ↑} b_{-\vK ↓} \Ket{0},
+\end{equation}
+of the $\vK$ dependent Hamiltonian
+$λ_{\vK} b_{\vK ↑}^† b_{\vK ↑}
+- λ_{\vK} b_{-\vK ↓} b_{-\vK ↓}^†$.
+Thus, consider the $z$-component of the Berry curvature of this state,
+\begin{subequations}
+  \begin{align}
+    Ω_{\vK}
+    & = i ∇_{\vK} ⨯
+    \Braket{\vK | ∇_{\vK} | \vK}, \\
+    & = i ∇_{\vK} ⨯
+    \Braket{0 | c_{-\vK ↓} c_{\vK ↑}
+      ∇_{\vK} \left( c_{\vK ↑}^† c_{-\vK ↓}^† \right) |0}, \\
+    & = Ω_{+ ↑}^- \of{k} + Ω_{- ↓}^- \of{-k} = 0.
+  \end{align}
+\end{subequations}
+
+\subsubsection{Optical Excitation}
+
+A single optically excited state in the left valley
+for a given $\vK$ is
+\begin{subequations}
+  \begin{align}
+    & {c_{+ ↑}^+}^† \ofK c_{\vK ↑} \Ket{\vK}, \\
+    & = {c_{+ ↑}^+}^† \ofK
+      \left( \cos{β_{\vK}} b_{\vK ↑} + \sin{β_{\vK}} b_{-\vK ↓}^† \right)
+      \Ket{\vK}, \\
+    & = \sin{β_{\vK}} {c_{+ ↑}^+}^† \ofK b_{-\vK ↓}^† \Ket{\vK}, \\
+    & = {c_{+ ↑}^+}^† \ofK b_{-\vK ↓}^† b_{\vK ↑} b_{-\vK ↓} \Ket{0}, \\
+    & = - \sin^2 {β_{\vK}} {c_{+ ↑}^+}^† \ofK b_{\vK ↑} \Ket{0}, \\
+    & = - \sin^3 {β_{\vK}} {c_{+ ↑}^+}^† \ofK {c_{- ↓}^-}^† \ofMK \Ket{0},
+  \end{align}
+\end{subequations}
+which has corresponding Berry Curvature
+\begin{subequations}
+  \begin{align}
+    Ω_{\vK}^L
+    & = \sin^6 {β_{\vK}}
+        \left[ Ω_{+ ↑}^+ \of{k} + Ω_{- ↓}^- \of{-k} \right], \\
+    & = 2 \sin^6 {β_{\vK}} Ω_{+ ↑}^+ \of{k}.
+  \end{align}
+\end{subequations}
+A single optically excited state in the right valley
+for a given $\vK$ is
+\begin{subequations}
+  \begin{align}
+    & {c_{- ↓}^+}^† \ofMK c_{-\vK ↓} \Ket{\vK}, \\
+    & = {c_{- ↓}^+}^† \ofK
+      \left( - \cos{β_{\vK}} b_{-\vK ↓} + \sin{β_{\vK}} b_{\vK ↑}^† \right)
+      \Ket{\vK}, \\
+    & = \sin{β_{\vK}} {c_{- ↓}^+}^† \ofK b_{\vK ↑}^† \Ket{\vK}, \\
+    & = {c_{- ↓}^+}^† \ofK b_{\vK ↑}^† b_{\vK ↑} b_{-\vK ↓} \Ket{0}, \\
+    & = \sin^2 {β_{\vK}} {c_{- ↓}^+}^† \ofK b_{-\vK ↓}\Ket{0}, \\
+    & = \sin^3 {β_{\vK}} {c_{- ↓}^+}^† \ofK {c_{+ ↑}^-}^† \ofK \Ket{0},
+  \end{align}
+\end{subequations}
+which has corresponding Berry Curvature
+\begin{subequations}
+  \begin{align}
+    Ω_{\vK}^R
+    & = \sin^6 {β_{\vK}}
+        \left[ Ω_{- ↓}^+ \of{k} + Ω_{+ ↑}^- \of{k} \right], \\
+    & = - 2 \sin^6 {β_{\vK}} Ω_{+ ↑}^+ \of{k}, \\
+    & = - Ω_{\vK}^L.
+  \end{align}
+\end{subequations}

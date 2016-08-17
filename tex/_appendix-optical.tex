@@ -1,0 +1,242 @@
+Here, we derive the optical transition rate for the superconducting TMD phase.
+
+\section{Single Electron Transitions}
+
+Consider the spin-orbit Hamiltonian for a single non-interacting electron
+which includes a position dependent potential $W \of{\vc{Q}}$
+and an electromagnetic potential $\vc{A} \of{\vc{Q}}$,
+\begin{equation}
+  H
+  = \frac{{\left( \vc{P} + e \vc{A} \right)}^2}{2 M}
+  + λ \vc{L} · \vc{S} + W.
+\end{equation}
+Given $\vc{L} = \vc{Q} × \vc{P}$, one can show, either via
+the commutation relations or formal differentiation,
+that the velocity operator is
+\begin{equation}
+  \vc{V}
+  = i \left[ H, \vc{Q} \right]
+  = \pderiv{H}{\vc{P}}
+  = \frac{\vc{P} + e \vc{A}}{M} + λ \vc{Q} × \vc{S}.
+\end{equation}
+In a gauge with $∇ ·\vc{A} = 0$,
+\begin{equation}
+  H = \frac{\vc{P}^2}{2 M} + \frac{e}{M} \vc{A} · \vc{P} + e^2 \vc{A}^2.
+\end{equation}
+
+For monochromatic optical perturbations
+with amplitude $A_0$,
+wave vector $\vc{q}$,
+frequency $ω$,
+and polarization vector $\vc{ϵ}$,
+the electromagnetic potential is of the form
+\begin{equation}
+  \vc{A} = 2 \re{\vc{ϵ} A_0 e^{i \left( \vc{q} · \vc{Q} - ω t \right)}}.
+\end{equation}
+For linear perturbations, we neglect the term of order $\vc{A}^2$
+to write the Hamiltonian in the form
+\begin{equation}
+  H = H_0 + H' e^{- i ω t} + {H'}^† e^{i ω t}.
+\end{equation}
+Here,
+$H' = e A_0 e^{i \vc{q} · \vc{Q}} \left( \vc{ϵ} · \vc{V} \right)$
+appears as a standard harmonic perturbation where
+$\vc{V} = i [ H_0, \vc{Q} ]$
+is the velocity operator for the unperturbed system.
+
+Thus, according to Fermi's golden rule,
+the optical transition probability per unit time is
+\begin{equation}
+  Γ_{f ← i}
+  = 2 π e^2 A_0^2
+    \abs{\Braket{f | e^{i \vc{q} · \vc{Q}} \vc{ϵ} · \vc{V} | i}}^2
+    δ \of{E_f + E_i - ω}. % chktex 19
+\end{equation}
+Typically, the dipole approximation is used in which
+$e^{i \vc{q} · \vc{Q}} → 1$.
+
+\subsection{Bloch Electron Transitions}
+
+In a noninteracting system of Bloch electrons,
+\begin{equation}
+  ∇_{\vK} H_{\vK} = \vc{V}_{\vK}.
+\end{equation}
+Thus, for each $\vK$,
+the matrix element appearing in the optical transition rate
+(in the dipole approximation) may be computed as
+\begin{equation}
+  \Braket{ψ_{n' \vK} | \vc{V} | ψ_{n \vK}}
+  = \Braket{u_{n' \vK} | \vc{V}_{\vK} | u_{n \vK}}
+  = \Braket{u_{n' \vK} | ∇_{\vK} H_{\vK} | u_{n \vK}}.
+\end{equation}
+
+The matrix elements of the derivative,
+$\Braket{u_{n \vK} | ∇_{\vK} H_{\vK} | u_{n' \vK}}$,
+appearing in the optical translation rate may be cumbersome to compute.
+We show that in the tight binding approximation with only $d$-type orbitals,
+it is sufficient to compute the derivative of the orbital matrix elements,
+$∇_{\vK} H_{\vK}^{ν ν'}
+= ∇_{\vK} \Braket{v_{ν \vK} | H_{\vK} | v_{ν' \vK}}$.
+
+We have
+\begin{equation}
+  H_{\vK}
+     = ∑_{n \vK'} E_{n \vK'} T_{\vK} \Ket{ψ_{n \vK'}}
+        \Bra{ψ_{n \vK'}} T_{\vK}^{-1}
+     = H_{\vK}^0 + H_{\vK}^1,
+\end{equation}
+where
+\begin{align}
+  \label{appendix:optical:decomposition}
+  H_{\vK}^0
+  & = ∑_{ν, ν'}
+      H_{\vK}^{ν ν'}
+      \Ket{v_{ν \vK}} \Bra{v_{ν' \vK}}, \\
+  H_{\vK}^1
+  & = ∑_{ν, ν'} ∑_{\vK' ≠ \vK}
+      H_{\vK'}^{ν ν'}
+      T_{\vK - \vK'}
+      \Ket{v_{ν \vK'}} \Bra{v_{ν' \vK'}}
+      T_{\vK - \vK'}^{-1}.
+\end{align}
+First, using
+$∇_{\vK} H_{\vK}^1 = i \left[ H_{\vK}^1, \vc{Q} \right]$,
+we obtain a sum over $\vK' ≠ \vK$ of terms proportional
+to $δ_{\vK, \vK'}$, % chktex 19
+thus all matrix elements for $∇_{\vK} H_{\vK}^1$ vanish.
+Next, we have
+\begin{multline}
+  \label{appendix:optical:sum}
+  ∇_{\vK} H_{\vK}^0
+  = ∑_{ν, ν'}
+    ∇_{\vK} H_{\vK}^{ν ν'}
+    \Ket{v_{ν \vK}} \Bra{v_{ν' \vK}} \\
+  + ∑_{ν, ν'}
+    H_{\vK}^{ν ν'}
+    \left( ∇_{\vK} \Ket{v_{ν \vK}} \right) \Bra{v_{ν' \vK}} \\
+  + ∑_{ν, ν'}
+    H_{\vK}^{ν ν'}
+    \Ket{v_{ν \vK}} \left( ∇_{\vK}  \Bra{v_{ν' \vK}} \right).
+\end{multline}
+Using
+\begin{equation}
+  \label{appendix:optical:ket:del}
+  ∇_{\vK} \Ket{v_{ν \vK}}
+  = \frac{T_{\vK}}{i \sqrt{N}}
+    ∑_{n = 1}^N e^{i \vK ⋅ \vRn{n}}
+    T \of{\vRn{n}} \vc{Q} \Ket{φ_ν},
+\end{equation}
+we find the second sum in
+\cref{appendix:optical:sum}
+contains terms proportional to the local optical matrix elements,
+$\Braket{φ_{ν'} | T \of{\vRn{n}} \vc{Q} | φ_ν}$.
+For finite $\vRn{n}$, these off-center integrals are small,
+and for $\vRn{n} = 0$, optical transitions between $d$-orbitals
+are forbidden by symmetry.
+Similar logic applies to the third sum in
+\cref{appendix:optical:sum},
+thus
+\begin{equation}
+  \label{appendix:optical:approx}
+  \Braket{u_{n \vK} | ∇_{\vK} H_{\vK} | u_{n' \vK}}
+  ⋍ ∑_{ν, ν'}
+    \cc{M}_{τ σ}^{ν n} \ofK
+    \left( ∇_{\vK} H_{\vK}^{ν ν'} \right)
+    M_{τ σ}^{ν' n'} \ofK
+\end{equation}
+
+In the case where $H_{\vK}^{ν ν'}$ is linear in $\vK$,
+computing this derivative is equivalent to using the minimal substitution, i.e.,
+$H_{\vK + e \vc{A}}^{ν ν'} = H_{\vK}^{ν ν'} + e A ∇_{\vK} H_{\vK}^{ν ν'}$.
+
+\section{Transitions in the TMD Model}
+
+As remarked above, we may consider a perturbation of
+$H_{τ σ}^{ν ν'} \ofK$ arising from minimal coupling,
+\begin{equation}
+  H_{τ σ}^{ν ν'} \ofK
+  → H_{τ σ}^{ν ν'} \of{\vK + e \vc{A}}
+  = H_{τ σ}^{ν ν'} \ofK + h_τ^{ν ν'},
+\end{equation}
+where in the dipole approximation,
+$\vc{A} = 2 \re{\vc{ϵ} A_0 e^{- i ω t}}$,
+$h_τ^{v v} = h_τ^{c c} = 0$,
+and
+\begin{equation}
+  h_τ^{v c}
+  = \cc{h}_τ^{c v}
+  = 2 a t e A_0
+    \left( τ \vc{\hat{x}} + i \vc{\hat{y}} \right)
+    · \re{\left( \vc{ϵ} e^{- i ω t} \right)}.
+\end{equation}
+Thus the optical perturbation operator is
+\begin{equation}
+  H^A
+  = \sumK ∑_{τ, σ}
+    h_τ^{v c}
+    {a^v_{τ σ}}^† \ofK
+    a^c_{τ σ} \ofK
+    + \hc
+\end{equation}
+Separating out the time dependence,
+we may write this in the standard form
+$H^A = H' e^{- i ω t} + H'^† e^{i ω t}$,
+where
+\begin{equation}
+  H'
+  = \sumK ∑_{τ, σ}
+    H'_τ
+    {a^v_{τ σ}}^† \ofK
+    a^c_{τ σ} \ofK
+  - \sumK ∑_{τ, σ}
+    H'_{-τ}
+    {a^c_{τ σ}}^† \ofK
+    a^v_{τ σ} \ofK,
+\end{equation}
+and
+\begin{equation}
+  H'_τ
+  = a t e A_0
+    \left( τ \vc{\hat{x}} + i \vc{\hat{y}} \right)
+    · \vc{ϵ}.
+\end{equation}
+Chancing basis, we may now recover the optical matrix element,
+$P_{τ σ}^{n n'} \of{\vK, \vc{ϵ}}$,
+now explicitly a function of the polarization vector,
+\begin{equation}
+  H^A
+  = \sumK ∑_{τ, σ} ∑_{n, n'}
+    \frac{e A_0}{m_0}
+    P_{τ σ}^{n n'} \of{\vK, \vc{ϵ}}
+    {c_{τ σ}^n}^† \ofK
+    c_{τ σ}^{n'} \ofK.
+\end{equation}
+For circularly polarized light,
+$\vc{ϵ_±} = \left( \vc{\hat{x}} ± i \vc{\hat{y}} \right) / \sqrt{2}$,
+\begin{equation}
+  P_{τ σ}^{+ -} \of{\vK, \vc{ϵ_±}}
+  = ∓ τ \sqrt{2} a t m_0
+    e^{± i ϕ}
+    \sin^2 {\frac{\fnTheta{∓ τ}}{2}}.
+\end{equation}
+
+A brief note about the units of $P$ above.
+To conveniently express $P$ in units of energy,
+multiply by $c / \si{\planckbar}$.
+Typically, $a t$ is given in \si{\angstrom\electronvolt},
+the electron mass is given in units
+of $\si{\mega \electronvolt} / c^2$,
+\si{\planckbar} in \si{\electronvolt\second},
+and $c$ in \si{\angstrom\per\second}.
+Thus when written as $(c / ℏ) P = p E_P$,
+where $p$ is a unitless function of the energy,
+the important overall energy scale is
+$E_P = at m_0 / (c ℏ) × 10^3 \si{\giga\electronvolt}$,
+where the symbols in $E_p$ are the numerical magnitudes of the
+quantities when expressed in the assumed units above.
+In particular,
+$E_P = at · \SI{0.259}{\giga\electronvolt}$,
+and for $at = 3.2$, $E_p = \SI{0.83}{\giga\electronvolt}$.
+Alternatively, one may write this in terms of fundamental constants:
+using $at = 3.2$ again gives
+$P = \left( 1.624 × 10^3 c ℏ m_0 \right) p$.
