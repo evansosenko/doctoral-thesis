@@ -591,26 +591,28 @@ Thus, we neglect the second term above and obtain
 
 \subsection{Normal States}
 
-For all normal eigenstates, the band resolved Berry curvature is
+In the non-interacting system, the band resolved Berry curvature is
 \begin{equation}
   \vc{Ω}_{τ σ}^n \ofK
   = i ∇_{\vK} ⨯
     \Braket{u_{τ σ}^n \ofK | ∇_{\vK} | u_{τ σ}^n \ofK}.
 \end{equation}
-
 This can be computed directly by first considering
-\begin{multline}
-  \Braket{u_{τ σ}^n \ofK | ∇_{\vK} | u_{τ σ}^n \ofK} \\
-  = ∑_ν
-    \cc{M}_{τ σ}^{ν n} \ofK
-    ∇_{\vK} M_{τ σ}^{ν n} \ofK \\
-  + ∑_{ν, ν'}
-    \cc{M}_{τ σ}^{ν n} \ofK
-    M_{τ σ}^{ν' n} \ofK
-    \Braket{v_{τ σ}^ν \ofK | ∇_{\vK} | v_{τ σ}^{ν'} \ofK}.
-\end{multline}
+\begin{equation}
+  \begin{aligned}
+    \Braket{u_{τ σ}^n \ofK | ∇_{\vK} | u_{τ σ}^n \ofK}
+    & = ∑_ν
+        \cc{M}_{τ σ}^{ν n} \ofK
+        ∇_{\vK} M_{τ σ}^{ν n} \ofK \\
+    & + ∑_{ν, ν'}
+        \cc{M}_{τ σ}^{ν n} \ofK
+        M_{τ σ}^{ν' n} \ofK
+        \Braket{v_{τ σ}^ν \ofK | ∇_{\vK} | v_{τ σ}^{ν'} \ofK}.
+  \end{aligned}
+\end{equation}
 The second term is effectively zero by an argument
-similar to the one given for the optical approximation above.
+similar to the one given below in
+\cref{s:appendix:optical:d-orbital}.
 Using the identities
 \begin{subequations}
   \begin{align}
@@ -633,18 +635,20 @@ gives the $z$-component of the curvature,
       {{\left[{(2 a t k)}^2 + {(Δ - λ τ σ)}^2 \right]}^{3/2}}.
   \end{align}
 \end{subequations}
-
 The Berry curvature of left and right circularly polarized
 ($\vc{ϵ_±}$) optical excitations for a given $\vK$
 then follows to be $± 2 Ω_{+ ↑}^+ \of{k}$.
 
 \subsection{BCS States}
 
-For simplicity,
-we consider the case where $γ = - γ' = +1$
-and $Δ_{\vK}$ is real in the BCS Hamiltonian in
-\cref{eq:hamiltonian:bcs:general}.
-The BCS ground states is
+We again consider the intervalley pairing state.
+The BCS ground states%
+\footnote{%
+  Note that the full ground state
+  also contains the lower two filled bands,
+  but those contribute zero net Berry curvature and may be ignored.
+}
+is
 \begin{subequations}
   \begin{align}
     \Ket{Ω}
@@ -652,13 +656,8 @@ The BCS ground states is
     & = ∏_{\vK} \left( \cos{β_{\vK}} - \sin{β_{\vK}}
         c_{\vK ↑}^† c_{-\vK ↓}^† \right) \Ket{0}.
   \end{align}
-\end{subequations}%
-\footnote{%
-  Note that the full ground state
-  also contains the lower two filled bands,
-  but those contribute zero net Berry curvature and may be ignored
-  in this section and the next.}
-This BCS ground state may be viewed as built up
+\end{subequations}
+This may be viewed as built up
 from the single-quasiparticle eigenstates,
 \begin{equation}
   \Ket{\vK}
@@ -670,15 +669,28 @@ $λ_{\vK} b_{\vK ↑}^† b_{\vK ↑}
 Thus, consider the $z$-component of the Berry curvature of this state,
 \begin{subequations}
   \begin{align}
+    \label{eq:berry_curvature.1}
     Ω_{\vK}
     & = i ∇_{\vK} ⨯
     \Braket{\vK | ∇_{\vK} | \vK}, \\
+    \label{eq:berry_curvature.2}
     & = i ∇_{\vK} ⨯
     \Braket{0 | c_{-\vK ↓} c_{\vK ↑}
       ∇_{\vK} \left( c_{\vK ↑}^† c_{-\vK ↓}^† \right) |0}, \\
+    \label{eq:berry_curvature.3}
     & = Ω_{+ ↑}^- \of{k} + Ω_{- ↓}^- \of{-k} = 0.
   \end{align}
 \end{subequations}
+To see why \cref{eq:berry_curvature.2} follows from \cref{eq:berry_curvature.1},
+write $\Ket{\vK} = \cos{β_{\vK}} - \sin{β_{\vK}} c_{\vK ↑}^† c_{-\vK ↓}^†$
+and consider each of the resulting four cross terms:
+one contains no operators, will be proportional to $\vK$,
+independent of $ϕ_{\vK}$, and thus have vanishing curl;
+two terms with pairs of either creation or annihilation operators
+have zero expectation value; this leaves only the term given in
+\cref{eq:berry_curvature.2}.
+\Cref{eq:berry_curvature.3} now follows since $0$ is independent of $\vK$,
+and the Berry curvature is additive over non-interacting states.
 
 \subsubsection{Optical Excitation}
 
