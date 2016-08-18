@@ -487,8 +487,8 @@ The total spin operator is
 \end{equation}
 where
 \begin{equation}
-  \vc{s} \ofK =
-    \frac{1}{2}
+  \vc{s} \ofK
+  = \frac{1}{2}
     ∑_{\substack{n, τ \\ σ, σ'}}
     \vc{σ}_{σ σ'} {c_{τ σ}^n}^† \ofK c_{τ σ'}^n \ofK
 \end{equation}
@@ -502,8 +502,8 @@ $\ev{{\left[ \vc{s} \ofK + \vc{s} \ofMK \right]}^2}$.
 To see this, note that only cross terms with the same or opposite $\vK$
 contribute, so that
 \begin{equation}
-  \ev{\vc{S}^2} =
-    \frac{1}{2} \sumK
+  \ev{\vc{S}^2}
+  = \frac{1}{2} \sumK
     \ev{{\left[ \vc{s} \ofK + \vc{s} \ofMK \right]}^2}.
 \end{equation}
 Thus, we must compute
@@ -523,61 +523,62 @@ to the expectation value, thus we write
     \vc{σ}_{α α} c_{\vK α}^† c_{\vK α}
   + \vc{σ}_{α α} c_{\vK \bar{α}}^† c_{\vK \bar{α}}
   + \vc{σ}_{α, -α} c_{\vK α}^† c_{\vK, - \bar{α}}
-  + \vc{σ}_{α, -α} c_{\vK \bar{α}}^† c_{\vK, -α}
+  + \vc{σ}_{α, -α} c_{\vK \bar{α}}^† c_{\vK, -α},
 \end{equation}
-
+and obtain
 \begin{equation}
   \ev{\vc{s} \ofK}
     = \frac{1}{2} \left( 1 + \sin^2 {β_{\vK}} \right) \Tr{\vc{σ}}
     = \vc{0}.
 \end{equation}
-
-\begin{multline}
-  \ev{\vc{s} \ofK · \vc{s} \ofKP}
-  = \frac{1}{4} ∑_{α α'}
-    \vc{σ}_{α α} · \vc{σ}_{α' α'}
-    \left( 1 + \sin^2 {β_{\vK}} + \sin^2 {β_{\vK'}} \right) \\
-  + \frac{1}{4} ∑_{α α'}
-    \vc{σ}_{α α} · \vc{σ}_{α' α'}
-    \ev{c_{\vK α}^† c_{\vK α} c_{\vK' α'}^† c_{\vK' α'}} \\
-  + \frac{1}{4} ∑_{α α'}
-    \vc{σ}_{α, -α} · \vc{σ}_{α', -α'}
-    \ev{c_{\vK \bar{α}}^† c_{\vK, -α} c_{\vK' α'}^† c_{\vK', -\bar{α}'}}
-\end{multline}
-
-\begin{multline}
-  \ev{\vc{s} \ofK · \vc{s} \ofKP}
-  = \frac{1}{4} ∑_{α α'}
-    \vc{σ}_{α α} · \vc{σ}_{α' α'}
-    \frac{1}{4} \sin^2 {2 β_{\vK}}
-    \left( δ_{\vK, \vK'} δ_{α, α'} + δ_{\vK, -\vK'} δ_{α, -α'} \right) \\
-  + \frac{1}{4} ∑_α
-    \vc{σ}_{α, -α} · \vc{σ}_{-α, α}
-    δ_{\vK, \vK'}
-    \cos^2 {β_{\vK}}
-\end{multline}
-
+Next we compute
+\begin{equation}
+  \begin{aligned}
+    \ev{\vc{s} \ofK · \vc{s} \ofKP}
+    & = \frac{1}{4} ∑_{α α'}
+        \vc{σ}_{α α} · \vc{σ}_{α' α'}
+        \left( 1 + \sin^2 {β_{\vK}} + \sin^2 {β_{\vK'}} \right) \\
+    & + \frac{1}{4} ∑_{α α'}
+        \vc{σ}_{α α} · \vc{σ}_{α' α'}
+        \ev{c_{\vK α}^† c_{\vK α} c_{\vK' α'}^† c_{\vK' α'}} \\
+    & + \frac{1}{4} ∑_{α α'}
+        \vc{σ}_{α, -α} · \vc{σ}_{α', -α'}
+        \ev{c_{\vK \bar{α}}^† c_{\vK, -α} c_{\vK' α'}^† c_{\vK', -\bar{α}'}}.
+  \end{aligned}
+\end{equation}
+The above expectation values are readily simplified using Wick's theorem,
+\begin{equation}
+\begin{aligned}
+    \ev{\vc{s} \ofK · \vc{s} \ofKP}
+    & = \frac{1}{4} ∑_{α α'}
+        \vc{σ}_{α α} · \vc{σ}_{α' α'}
+        \frac{1}{4} \sin^2 {2 β_{\vK}}
+        \left( δ_{\vK, \vK'} δ_{α, α'} + δ_{\vK, -\vK'} δ_{α, -α'} \right) \\
+    & + \frac{1}{4} ∑_α
+        \vc{σ}_{α, -α} · \vc{σ}_{-α, α}
+        δ_{\vK, \vK'}
+        \cos^2 {β_{\vK}}.
+\end{aligned}
+\end{equation}
+Evaluating the sum gives,
 \begin{equation}
   \ev{\vc{s} \ofK · \vc{s} \ofKP}
   = \frac{1}{8} \sin^2 {2 β_{\vK}}
     \left( δ_{\vK, \vK'} - δ_{\vK, -\vK'} \right)
   + δ_{\vK, \vK'}
-    \cos^2 {β_{\vK}}
+    \cos^2 {β_{\vK}},
 \end{equation}
-
-\begin{equation}
-  \ev{{\left[ \vc{s} \ofK + \vc{s} \ofMK \right]}^2}
-  = 2 \ev{\vc{s} \ofK · \vc{s} \ofMK}
-  + 2 \ev{{\vc{s} \ofK}^2}
-\end{equation}
-
-\begin{equation}
-  \ev{{\left[ \vc{s} \ofK + \vc{s} \ofMK \right]}^2}
-  = 2 \cos^2 {β_{\vK}}
-  - \frac{δ_{\vK, \vc{0}}}{4} \sin^2 {2 β_{\vK}}
-\end{equation}
-
-Far from the chemical potential,
+which shows
+\begin{subequations}
+  \begin{align}
+    \ev{{\left[ \vc{s} \ofK + \vc{s} \ofMK \right]}^2}
+    & = 2 \ev{\vc{s} \ofK · \vc{s} \ofMK}
+      + 2 \ev{{\vc{s} \ofK}^2}, \\
+    & = 2 \cos^2 {β_{\vK}}
+      - \frac{δ_{\vK, \vc{0}}}{4} \sin^2 {2 β_{\vK}}.
+  \end{align}
+\end{subequations}
+Far from the chemical potential (where $\vK = 0$),
 $\sin^2 {2 β_{\vK}}$ approaches zero while $\cos^2 {β_{\vK}}$
 approaches unity.
 Thus, we neglect the second term above and obtain
