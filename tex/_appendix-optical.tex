@@ -1,5 +1,4 @@
-Here, we derive the optical transition rate for the superconducting TMD phase.
-
+\label{s:appendix:optical}
 \section{Single Electron Transitions}
 
 Consider the spin-orbit Hamiltonian for a single non-interacting electron
@@ -55,7 +54,7 @@ the optical transition probability per unit time is
 Typically, the dipole approximation is used in which
 $e^{i \vc{q} · \vc{Q}} → 1$.
 
-\subsection{Bloch Electron Transitions}
+\subsection{Tight Binding $d$-orbital Transitions}
 
 In a noninteracting system of Bloch electrons,
 \begin{equation}
@@ -105,19 +104,23 @@ we obtain a sum over $\vK' ≠ \vK$ of terms proportional
 to $δ_{\vK, \vK'}$, % chktex 19
 thus all matrix elements for $∇_{\vK} H_{\vK}^1$ vanish.
 Next, we have
-\begin{multline}
-  \label{appendix:optical:sum}
-  ∇_{\vK} H_{\vK}^0
-  = ∑_{ν, ν'}
-    ∇_{\vK} H_{\vK}^{ν ν'}
-    \Ket{v_{ν \vK}} \Bra{v_{ν' \vK}} \\
-  + ∑_{ν, ν'}
-    H_{\vK}^{ν ν'}
-    \left( ∇_{\vK} \Ket{v_{ν \vK}} \right) \Bra{v_{ν' \vK}} \\
-  + ∑_{ν, ν'}
-    H_{\vK}^{ν ν'}
-    \Ket{v_{ν \vK}} \left( ∇_{\vK}  \Bra{v_{ν' \vK}} \right).
-\end{multline}
+\begin{subequations}
+  \begin{align}
+    \label{appendix:optical:sum.1}
+    ∇_{\vK} H_{\vK}^0
+    & = ∑_{ν, ν'}
+      ∇_{\vK} H_{\vK}^{ν ν'}
+      \Ket{v_{ν \vK}} \Bra{v_{ν' \vK}} \\
+    \label{appendix:optical:sum.2}
+    & + ∑_{ν, ν'}
+      H_{\vK}^{ν ν'}
+      \left( ∇_{\vK} \Ket{v_{ν \vK}} \right) \Bra{v_{ν' \vK}} \\
+    \label{appendix:optical:sum.3}
+    & + ∑_{ν, ν'}
+      H_{\vK}^{ν ν'}
+      \Ket{v_{ν \vK}} \left( ∇_{\vK}  \Bra{v_{ν' \vK}} \right).
+  \end{align}
+\end{subequations}
 Using
 \begin{equation}
   \label{appendix:optical:ket:del}
@@ -126,25 +129,24 @@ Using
     ∑_{n = 1}^N e^{i \vK ⋅ \vRn{n}}
     T \of{\vRn{n}} \vc{Q} \Ket{φ_ν},
 \end{equation}
-we find the second sum in
-\cref{appendix:optical:sum}
+we find the sum
+\cref{appendix:optical:sum.2}
 contains terms proportional to the local optical matrix elements,
 $\Braket{φ_{ν'} | T \of{\vRn{n}} \vc{Q} | φ_ν}$.
 For finite $\vRn{n}$, these off-center integrals are small,
 and for $\vRn{n} = 0$, optical transitions between $d$-orbitals
 are forbidden by symmetry.
-Similar logic applies to the third sum in
-\cref{appendix:optical:sum},
+Similar logic applies to the sum
+\cref{appendix:optical:sum.1},
 thus
 \begin{equation}
   \label{appendix:optical:approx}
   \Braket{u_{n \vK} | ∇_{\vK} H_{\vK} | u_{n' \vK}}
   ⋍ ∑_{ν, ν'}
-    \cc{M}_{τ σ}^{ν n} \ofK
+    \cc{M}_{\vK}^{ν n}
     \left( ∇_{\vK} H_{\vK}^{ν ν'} \right)
-    M_{τ σ}^{ν' n'} \ofK
+    M_{\vK}^{ν' n'}.
 \end{equation}
-
 In the case where $H_{\vK}^{ν ν'}$ is linear in $\vK$,
 computing this derivative is equivalent to using the minimal substitution, i.e.,
 $H_{\vK + e \vc{A}}^{ν ν'} = H_{\vK}^{ν ν'} + e A ∇_{\vK} H_{\vK}^{ν ν'}$.
