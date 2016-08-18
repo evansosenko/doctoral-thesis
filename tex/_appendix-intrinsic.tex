@@ -468,3 +468,118 @@ and converting to integral form,
   \frac{\abs{f \of{ξ}}^2 \abs{ρ \of{ξ}} \dif ξ}
   {\sqrt{ξ^2 + \left( 1 / 2 \right) \abs{f \of{ξ}}^2 \abs{χ_0}^2}}.
 \end{equation}
+
+\section{Spin Expectation Values}
+
+The full ground state in the superconducting system is
+\begin{equation}
+  ∏_{\vK} c_{\vK \bar{↑}}^† c_{\vK \bar{↓}}^† \Ket{Ω},
+\end{equation}
+where the bar notation denotes states in the lower valance band, i.e.,
+if $α = (τ, σ)$ then $\bar{α} = (-τ, σ)$.
+The total spin operator is
+\begin{equation}
+  \vc{S}
+  = \sumK \vc{s} \ofK
+  = \frac{1}{2} \sumK
+    \left[ \vc{s} \ofK + \vc{s} \ofMK \right],
+\end{equation}
+where
+\begin{equation}
+  \vc{s} \ofK =
+    \frac{1}{2}
+    ∑_{\substack{n, τ \\ σ, σ'}}
+    \vc{σ}_{σ σ'} {c_{τ σ}^n}^† \ofK c_{τ σ'}^n \ofK
+\end{equation}
+is the spin operator for a given $\vK$,
+with $\vc{σ}_{σ σ'} = \left( σ^x_{σ σ'}, σ^y_{σ σ'}, σ^z_{σ σ'} \right)$.
+
+We wish to compute $\ev{\vc{S}}$ and $\ev{\vc{S}^2}$.
+The former follows from the value of $\ev{\vc{s} \ofK}$,
+and the latter from the spin of Cooper pairs,
+$\ev{{\left[ \vc{s} \ofK + \vc{s} \ofMK \right]}^2}$.
+To see this, note that only cross terms with the same or opposite $\vK$
+contribute, so that
+\begin{equation}
+  \ev{\vc{S}^2} =
+    \frac{1}{2} \sumK
+    \ev{{\left[ \vc{s} \ofK + \vc{s} \ofMK \right]}^2}.
+\end{equation}
+Thus, we must compute
+$\ev{\vc{s} \ofK}$,
+$\ev{{\left[ \vc{s} \ofK \right]}^2}$,
+and $\ev{\vc{s} \ofK \cdot \vc{s} \ofMK}$.
+In the remainder of this section,
+equality for the operator $\vc{s} \ofK$ will denote
+equality of operators which have equivalent values
+on all three of these expectation values.
+
+Only terms with $n = -1$ will contribute
+to the expectation value, thus we write
+\begin{equation}
+  \vc{s} \ofK
+  = \frac{1}{2} ∑_α
+    \vc{σ}_{α α} c_{\vK α}^† c_{\vK α}
+  + \vc{σ}_{α α} c_{\vK \bar{α}}^† c_{\vK \bar{α}}
+  + \vc{σ}_{α, -α} c_{\vK α}^† c_{\vK, - \bar{α}}
+  + \vc{σ}_{α, -α} c_{\vK \bar{α}}^† c_{\vK, -α}
+\end{equation}
+
+\begin{equation}
+  \ev{\vc{s} \ofK}
+    = \frac{1}{2} \left( 1 + \sin^2 {β_{\vK}} \right) \Tr{\vc{σ}}
+    = \vc{0}.
+\end{equation}
+
+\begin{multline}
+  \ev{\vc{s} \ofK · \vc{s} \ofKP}
+  = \frac{1}{4} ∑_{α α'}
+    \vc{σ}_{α α} · \vc{σ}_{α' α'}
+    \left( 1 + \sin^2 {β_{\vK}} + \sin^2 {β_{\vK'}} \right) \\
+  + \frac{1}{4} ∑_{α α'}
+    \vc{σ}_{α α} · \vc{σ}_{α' α'}
+    \ev{c_{\vK α}^† c_{\vK α} c_{\vK' α'}^† c_{\vK' α'}} \\
+  + \frac{1}{4} ∑_{α α'}
+    \vc{σ}_{α, -α} · \vc{σ}_{α', -α'}
+    \ev{c_{\vK \bar{α}}^† c_{\vK, -α} c_{\vK' α'}^† c_{\vK', -\bar{α}'}}
+\end{multline}
+
+\begin{multline}
+  \ev{\vc{s} \ofK · \vc{s} \ofKP}
+  = \frac{1}{4} ∑_{α α'}
+    \vc{σ}_{α α} · \vc{σ}_{α' α'}
+    \frac{1}{4} \sin^2 {2 β_{\vK}}
+    \left( δ_{\vK, \vK'} δ_{α, α'} + δ_{\vK, -\vK'} δ_{α, -α'} \right) \\
+  + \frac{1}{4} ∑_α
+    \vc{σ}_{α, -α} · \vc{σ}_{-α, α}
+    δ_{\vK, \vK'}
+    \cos^2 {β_{\vK}}
+\end{multline}
+
+\begin{equation}
+  \ev{\vc{s} \ofK · \vc{s} \ofKP}
+  = \frac{1}{8} \sin^2 {2 β_{\vK}}
+    \left( δ_{\vK, \vK'} - δ_{\vK, -\vK'} \right)
+  + δ_{\vK, \vK'}
+    \cos^2 {β_{\vK}}
+\end{equation}
+
+\begin{equation}
+  \ev{{\left[ \vc{s} \ofK + \vc{s} \ofMK \right]}^2}
+  = 2 \ev{\vc{s} \ofK · \vc{s} \ofMK}
+  + 2 \ev{{\vc{s} \ofK}^2}
+\end{equation}
+
+\begin{equation}
+  \ev{{\left[ \vc{s} \ofK + \vc{s} \ofMK \right]}^2}
+  = 2 \cos^2 {β_{\vK}}
+  - \frac{δ_{\vK, \vc{0}}}{4} \sin^2 {2 β_{\vK}}
+\end{equation}
+
+Far from the chemical potential,
+$\sin^2 {2 β_{\vK}}$ approaches zero while $\cos^2 {β_{\vK}}$
+approaches unity.
+Thus, we neglect the second term above and obtain
+\begin{equation}
+  \ev{\vc{S}^2} = \sumK \cos^2 {β_{\vK}}.
+\end{equation}
