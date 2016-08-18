@@ -15,7 +15,7 @@ clean:
 	@rm -rf $(LATEX_BULD)
 	@echo Cleaning $(LATEX_SRC)/
 	@cd tex; latexmk -c; rm -f $(LATEX_INPUT).$(LATEX_OUTPUT_EXT)
-	@cd tex; rm -f $(LATEX_INPUT).bbl $(LATEX_INPUT).run.xml
+	@cd tex; rm -f *.bib *.bbl $(LATEX_INPUT).run.xml
 
 tex:
 	@mkdir -p $(LATEX_BULD)
