@@ -1,27 +1,34 @@
+\renewcommand{\theuniversity}{University of California, Riverside}
 \newcommand{\signatureblock}[1]{%
   \begin{minipage}{10cm}
-    \hrule\smallskip #1
+    \hrule\smallskip\hfill #1
   \end{minipage}
 }
 
 \clearpage
 \thispagestyle{empty}
-\centering
 \vspace*{-\toptafiddle}
 
-The Dissertation of~\theauthor~is approved
+\vfill
+
+\justify{}
+The Dissertation of~\theauthor~is approved:
 
 \vfill
 
-\signatureblock{Aji, Vivek, Chairperson}
+\centering
+
+\signatureblock{~}
 \vfill
-\signatureblock{Gabor, Nathaniel}
+\signatureblock{~}
 \vfill
-\signatureblock{Pryadko, Leonid}
+\signatureblock{Committee Chairperson}
 
 \vfill
 
-\textsc{\theuniversity}
+\theuniversity{}
+
+\vfill
 
 \enlargethispage{\bottafiddle}
 \clearpage
