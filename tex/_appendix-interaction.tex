@@ -33,16 +33,18 @@ of fermionic Fock operators,
 Here, $\Ket{α β} = \left( \Ket{α} \Ket{β}
 - \Ket{β} \Ket{α} \right) / \sqrt{2}$,
 and we introduce the symbol
-\begin{align}
-  v_{α β, γ δ} % chktex 19
-  & = \left( \Bra{f_α} \Bra{f_β} \right) v
-      \left( \Ket{f_γ} \Ket{f_δ} \right) % chktex 19
-      \Braket{σ_α | σ_γ} \Braket{σ_β | σ_δ}, \\ % chktex 19
-  & = δ_{σ_α σ_γ} δ_{σ_β σ_δ} % chktex 19
-      ∫ \cc{f}_α \of{\vc{x}} \cc{f}_β \of{\vc{x}'} v % chktex 19
-      \of{\vc{x}, \vc{x}'} f_γ \of{\vc{x}} f_δ \of{\vc{x}'} % chktex 19
-      \dif^d \vc{x} \dif^d \vc{x}',
-\end{align}
+\begin{equation}
+  \begin{aligned}
+    v_{α β, γ δ} % chktex 19
+    & = \left( \Bra{f_α} \Bra{f_β} \right) v
+        \left( \Ket{f_γ} \Ket{f_δ} \right) % chktex 19
+        \Braket{σ_α | σ_γ} \Braket{σ_β | σ_δ}, \\ % chktex 19
+    & = δ_{σ_α σ_γ} δ_{σ_β σ_δ} % chktex 19
+        ∫ \cc{f}_α \of{\vc{x}} \cc{f}_β \of{\vc{x}'} v % chktex 19
+        \of{\vc{x}, \vc{x}'} f_γ \of{\vc{x}} f_δ \of{\vc{x}'} % chktex 19
+        \dif^d \vc{x} \dif^d \vc{x}',
+  \end{aligned}
+\end{equation}
 so that $\Braket{α β | v | γ δ} = v_{α β, γ δ} - v_{α β, δ γ}$. % chktex 19
 For a given interaction, the explicit form of $V$
 depends on the choice of basis states.
@@ -66,8 +68,9 @@ where the colon denotes normal ordering and
   ρ \of{\vc{x}} = ∑_σ Ψ_σ^† \of{\vc{x}} Ψ_σ \of{\vc{x}}.
 \end{equation}
 
-For interactions which depend only on the relative separation,
-$v \of{\vc{x}, \vc{x}'} = v \of{\vc{x}' - \vc{x}} = v \of{\vc{r}}$,
+For interactions $v \of{\vc{r}}$
+which depend only on the relative separation,
+$\vc{r} = \vc{x}' - \vc{x}$,
 if one chooses the countable basis
 of box normalized momentum eigenstates in a volume $Ω$
 with periodic boundary conditions,

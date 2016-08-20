@@ -94,14 +94,19 @@ Projecting onto states near the chemical potential gives
 \begin{multline}
   \label{eq:channels}
   P_{τ = {\s}}^{n = -} \left( H^V \right)
-  = \sumKK v \of{\vK' - \vK} \\
-  × \left(
-    A_{\vK \vK'}^2 c_{\vK' ↑}^† c_{-\vK' ↑}^† c_{-\vK ↑} c_{\vK ↑}
-  + A_{\vK' \vK}^2 c_{\vK' ↓}^† c_{-\vK' ↓}^† c_{-\vK ↓} c_{\vK ↓}
-    \right. \\ + \left.
+  = \sumKK v \of{\vK' - \vK}
+    \left(
+    2 \abs{A_{\vK \vK'}}^2
+    c_{\vK' ↑}^† c_{-\vK' ↓}^† c_{-\vK ↓} c_{\vK ↑}
+    \right. \\ \left.
+  + A_{\vK \vK'}^2 c_{\vK' ↑}^†
+    c_{-\vK' ↑}^† c_{-\vK ↑} c_{\vK ↑}
+  + A_{\vK' \vK}^2 c_{\vK' ↓}^†
+    c_{-\vK' ↓}^† c_{-\vK ↓} c_{\vK ↓}
+    \vphantom{%
       2 \abs{A_{\vK \vK'}}^2
-      c_{\vK' ↑}^† c_{-\vK' ↓}^† c_{-\vK ↓} c_{\vK ↑}
-    \vphantom{2 \abs{V_{\vK \vK'}}^2} \right),
+      c_{\vK' ↑}^† c_{-\vK' ↓}^† c_{-\vK ↓} c_{\vK ↑}}
+    \right),
 \end{multline}
 where
 \begin{equation}
@@ -110,8 +115,9 @@ where
     \sin{\frac{θ_{\vK'}}{2}} \sin{\frac{θ_{\vK}}{2}}
   + \cos{\frac{θ_{\vK'}}{2}} \cos{\frac{θ_{\vK}}{2}}.
 \end{equation}
-The first two terms in \cref{eq:channels} lead to intravalley pairing,
-and the third to intervalley pairing.
+The first term in \cref{eq:channels}
+leads to intervalley pairing,
+and last two lead to intravalley pairing.
 We analyze the possible states within mean field theory.
 The BCS order parameter is
 \begin{equation}

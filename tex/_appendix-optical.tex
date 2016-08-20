@@ -86,19 +86,21 @@ We have
      = H_{\vK}^0 + H_{\vK}^1,
 \end{equation}
 where
-\begin{align}
-  \label{appendix:optical:decomposition}
-  H_{\vK}^0
-  & = ∑_{ν, ν'}
-      H_{\vK}^{ν ν'}
-      \Ket{v_{ν \vK}} \Bra{v_{ν' \vK}}, \\
-  H_{\vK}^1
-  & = ∑_{ν, ν'} ∑_{\vK' ≠ \vK}
-      H_{\vK'}^{ν ν'}
-      T_{\vK - \vK'}
-      \Ket{v_{ν \vK'}} \Bra{v_{ν' \vK'}}
-      T_{\vK - \vK'}^{-1}.
-\end{align}
+\begin{subequations}
+  \begin{align}
+    \label{appendix:optical:decomposition}
+    H_{\vK}^0
+    & = ∑_{ν, ν'}
+        H_{\vK}^{ν ν'}
+        \Ket{v_{ν \vK}} \Bra{v_{ν' \vK}}, \\
+    H_{\vK}^1
+    & = ∑_{ν, ν'} ∑_{\vK' ≠ \vK}
+        H_{\vK'}^{ν ν'}
+        T_{\vK - \vK'}
+        \Ket{v_{ν \vK'}} \Bra{v_{ν' \vK'}}
+        T_{\vK - \vK'}^{-1}.
+  \end{align}
+\end{subequations}
 First, using
 $∇_{\vK} H_{\vK}^1 = i \left[ H_{\vK}^1, \vc{Q} \right]$,
 we obtain a sum over $\vK' ≠ \vK$ of terms proportional

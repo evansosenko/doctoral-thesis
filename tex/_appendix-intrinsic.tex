@@ -12,11 +12,10 @@ by global conservation of momentum.
 Starting with
 \cref{eq:interaction:tight-binding:momentum},
 the integral over $\vc{q}$ is unchanged,
-\begin{multline}
+\begin{equation}
   V
   = \frac{1}{2} \frac{Ω}{N}
-    ∑_{ν, ν'}
-    ∑_{σ, σ'}
+    ∑_{\substack{ν, ν' \\ σ, σ'}}
     ∑_{\vK', \bar{\vK}}
     ∑_{\vK, \bar{\vK}'}
     \tilde{v}^{ν ν'}_{\vK - \bar{\vK}}
@@ -25,7 +24,7 @@ the integral over $\vc{q}$ is unchanged,
     \right]
     a_{\bar{\vK} ν σ}^† a_{\bar{\vK}' ν' σ'}^†
     a_{\vK' ν' σ'} a_{\vK ν σ}.
-\end{multline}
+\end{equation}
 We now split up the integral over the global momentum coordinates
 into integrals over relative coordinates centered about each valley;
 this introduces an additional overall factor of $2^{-4}$
@@ -59,93 +58,98 @@ and exchange with $τ = \bar{τ}'$ and $\bar{τ} = τ'$.
 We indicate summation over the allowed cases
 by adding a prime to the sum.
 Thus, we obtain
-\begin{multline}
+\begin{equation}
   V
   = \frac{1}{2^5}
-    ∑_{ν, ν'}
-    ∑_{σ, σ'}
     \sideset{}{'} ∑_{\vK, \vK', \vc{q}}
+    ∑_{\substack{ν, ν' \\ σ, σ'}}
     \sideset{}{'} ∑_{\substack{τ, \bar{τ}, \\ τ', \bar{τ}'}}
-    \tilde{v}^{ν' ν}_{\vc{q} + \left( \bar{τ} - τ \right) \vc{K}} \\
+    \tilde{v}^{ν' ν}_{\vc{q} + \left( \bar{τ} - τ \right) \vc{K}}
     {a_{\bar{τ} σ}^ν} ^† \of{\vK + \vc{q}}
     {a_{\bar{τ}' σ'}^{ν'}}^† \of{\vK' - \vc{q}}
     a_{τ' σ'}^{ν'} \ofKP
     a_{τ σ}^ν \ofK.
-\end{multline}
+\end{equation}
 
 The expected BCS instability is strongest for scattering
 with $\vK = - \vK'$.
 Restricting the sum over $\vK'$ to this condition,
 relabeling the momentum indexes,
 and defining $v_{\vc{q}}^{ν ν'} = 2^{-4} \tilde{v}_{\vc{q}}^{ν' ν}$ gives
-\begin{multline}
+\begin{equation}
   V
   = \frac{1}{2}
-    ∑_{ν, ν'}
-    ∑_{σ, σ'}
     \sideset{}{'} ∑_{\vK, \vK'}
+    ∑_{\substack{ν, ν' \\ σ, σ'}}
     \sideset{}{'} ∑_{\substack{τ, \bar{τ}, \\ τ', \bar{τ}'}}
-    v^{ν ν'}_{\vK' - \vK + \left( \bar{τ} - τ \right) \vc{K}} \\
+    v^{ν ν'}_{\vK' - \vK + \left( \bar{τ} - τ \right) \vc{K}}
     {a_{\bar{τ} σ}^ν}^† \ofKP
     {a_{\bar{τ}' σ'}^{ν'}}^† \ofMKP
     a_{τ' σ'}^{ν'} \ofMK
     a_{τ σ}^ν \ofK.
-\end{multline}
+\end{equation}
 Expanding the sum over the valley indexes gives
-\begin{multline}
-  V
-  = \frac{1}{2}
-    \sideset{}{'} ∑_{\vK, \vK'}
-    ∑_{τ, τ',}
-    ∑_{σ, σ'}
-    ∑_{ν, ν'}
-    [
-    v^{ν ν'}_{\vK' - \vK}
-    {a_{τ σ}^ν}^† \ofKP
-    {a_{τ' σ'}^{ν'}}^† \ofMKP
-    a_{τ' σ'}^{ν'} \ofMK
-    a_{τ σ}^ν \ofK
-    \\ +
-    v^{ν ν'}_{\vK' - \vK + \left( τ' - τ \right) \vc{K}}
-    {a_{τ' σ}^ν}^† \ofKP
-    {a_{-τ' σ'}^{ν'}}^† \ofMKP
-    a_{-τ σ'}^{ν'} \ofMK
-    a_{τ σ}^ν \ofK
-    \\ +
-    v^{ν ν'}_{\vK' - \vK + \left( τ' - τ \right) \vc{K}}
-    {a_{τ' σ}^ν}^† \ofKP
-    {a_{τ σ'}^{ν'}}^† \ofMKP
-    a_{τ' σ'}^{ν'} \ofMK
-    a_{τ σ}^ν \ofK
-    ].
-\end{multline}
-
+\begin{subequations}
+  \begin{align}
+    V
+    & = \frac{1}{2}
+      \sideset{}{'} ∑_{\vK, \vK'}
+      ∑_{τ, τ',}
+      ∑_{ν, ν'}
+      ∑_{σ, σ'}
+      \Big[
+      v^{ν ν'}_{\vK' - \vK}
+      {a_{τ σ}^ν}^† \ofKP
+      {a_{τ' σ'}^{ν'}}^† \ofMKP
+      a_{τ' σ'}^{ν'} \ofMK
+      a_{τ σ}^ν \ofK
+      \\
+    & +
+      v^{ν ν'}_{\vK' - \vK + \left( τ' - τ \right) \vc{K}}
+      {a_{τ' σ}^ν}^† \ofKP
+      {a_{-τ' σ'}^{ν'}}^† \ofMKP
+      a_{-τ σ'}^{ν'} \ofMK
+      a_{τ σ}^ν \ofK
+      \\
+    & +
+      v^{ν ν'}_{\vK' - \vK + \left( τ' - τ \right) \vc{K}}
+      {a_{τ' σ}^ν}^† \ofKP
+      {a_{τ σ'}^{ν'}}^† \ofMKP
+      a_{τ' σ'}^{ν'} \ofMK
+      a_{τ σ}^ν \ofK
+      \Big].
+  \end{align}
+\end{subequations}
 Projecting to bands with $α = τ = σ$,
-\begin{multline}
-  V
-  = \frac{1}{2}
-    \sideset{}{'} ∑_{\vK, \vK'}
-    ∑_{ν, ν'}
-    ∑_α
-    v^{ν ν'}_{\vK' - \vK}
-    [
-    {a^ν_α}^† \ofKP
-    {a^{ν'}_α}^† \ofMKP
-    a^{ν'}_α \ofMK
-    a^ν_α \ofK
-    \\ +
-    {a^ν_α}^† \ofKP
-    {a^{ν'}_{-α}}^† \ofMKP
-    a^{ν'}_{-α} \ofMK
-    a^ν_α \ofK
-    \\ +
-    ∑_{α'}
-    {a^ν_{α}}^† \ofKP
-    {a^{ν'}_{α'}}^† \ofMKP
-    a^{ν'}_{α'} \ofMK
-    a^ν_α \ofK
-    ].
-\end{multline}
+\begin{subequations}
+  \begin{align}
+    V
+    & = \frac{1}{2}
+      \sideset{}{'} ∑_{\vK, \vK'}
+      ∑_{ν, ν'}
+      ∑_α
+      v^{ν ν'}_{\vK' - \vK}
+      \Big[
+      {a^ν_α}^† \ofKP
+      {a^{ν'}_α}^† \ofMKP
+      a^{ν'}_α \ofMK
+      a^ν_α \ofK
+      \\
+    & +
+      {a^ν_α}^† \ofKP
+      {a^{ν'}_{-α}}^† \ofMKP
+      a^{ν'}_{-α} \ofMK
+      a^ν_α \ofK
+      \\
+    & +
+      ∑_{α'}
+      {a^ν_{α}}^† \ofKP
+      {a^{ν'}_{α'}}^† \ofMKP
+      a^{ν'}_{α'} \ofMK
+      a^ν_α \ofK
+      \Big].
+  \end{align}
+\end{subequations}
 This simplifies into explicit intervalley and intravalley terms,
 \begin{multline}
   \label{eq:interaction:tight-binding:superconducting}
@@ -154,7 +158,7 @@ This simplifies into explicit intervalley and intravalley terms,
     ∑_{ν, ν'}
     ∑_α
     v^{ν ν'}_{\vK' - \vK}
-    [
+    \Big[
     {a^ν_α}^† \ofKP
     {a^{ν'}_α}^† \ofMKP
     a^{ν'}_α \ofMK
@@ -164,7 +168,7 @@ This simplifies into explicit intervalley and intravalley terms,
     {a^{ν'}_{-α}}^† \ofMKP
     a^{ν'}_{-α} \ofMK
     a^ν_α \ofK
-    ].
+    \Big].
 \end{multline}
 
 \section{Superconducting channels}
@@ -177,27 +181,34 @@ Assuming the interaction is real-valued and orbital-independent,%
   term survives.
   For completeness, we still consider the intravalley terms in this appendix.
 }
-$v^{ν ν'}_{\vK' - \vK} = v \of{\vK' - \vK} = v \of{\vK - \vK'}$,
+\begin{equation}
+  v^{ν ν'}_{\vK' - \vK} = v \of{\vK' - \vK} = v \of{\vK - \vK'},
+\end{equation}
 \cref{eq:interaction:tight-binding:superconducting}
 projected to the upper $n = -1$ bands with $τ = σ$ is
 \begin{multline}
   \label{eq:intrinsic:projected}
-  P_{τ = σ}^{-} \left( H^V \right) =
-    \sumKK v \of{\vK' - \vK}
-    \\ × \left(
-      A_{\vK \vK'}^2 c_{\vK' ↑}^† c_{-\vK' ↑}^† c_{-\vK ↑} c_{\vK ↑}
-      + \cc{A}_{\vK \vK'}^2 c_{\vK' ↓}^† c_{-\vK' ↓}^† c_{-\vK ↓} c_{\vK ↓}
-    \right. \\ + \left.
+  P_{τ = {\s}}^{n = -} \left( H^V \right)
+  = \sumKK v \of{\vK' - \vK}
+    \left(
+    2 \abs{A_{\vK \vK'}}^2
+    c_{\vK' ↑}^† c_{-\vK' ↓}^† c_{-\vK ↓} c_{\vK ↑}
+    \right. \\ \left.
+  + A_{\vK \vK'}^2 c_{\vK' ↑}^†
+    c_{-\vK' ↑}^† c_{-\vK ↑} c_{\vK ↑}
+  + A_{\vK' \vK}^2 c_{\vK' ↓}^†
+    c_{-\vK' ↓}^† c_{-\vK ↓} c_{\vK ↓}
+    \vphantom{%
       2 \abs{A_{\vK \vK'}}^2
-      c_{\vK' ↑}^† c_{-\vK' ↓}^† c_{-\vK ↓} c_{\vK ↑}
-    \vphantom{2 \abs{A_{\vK \vK'}}^2} \right),
+      c_{\vK' ↑}^† c_{-\vK' ↓}^† c_{-\vK ↓} c_{\vK ↑}}
+    \right),
 \end{multline}
 where
 \begin{equation}
-  A_{\vK \vK'} =
-    e^{i \left( ϕ_{\vK'} - ϕ_{\vK} \right)}
+  A_{\vK \vK'}
+  = e^{i \left( ϕ_{\vK'} - ϕ_{\vK} \right)}
     \sin{\frac{θ_{\vK'}}{2}} \sin{\frac{θ_{\vK}}{2}}
-    + \cos{\frac{θ_{\vK'}}{2}} \cos{\frac{θ_{\vK}}{2}}.
+  + \cos{\frac{θ_{\vK'}}{2}} \cos{\frac{θ_{\vK}}{2}}.
 \end{equation}
 
 For the intravalley channels, the coefficient can be expanded as
@@ -262,31 +273,32 @@ which further restricts the summation.
 where $γ = γ' = ±1$ ($γ = - γ' = 1$) corresponds to the
 intravalley (intervalley) scattering channels,
 \begin{equation}
-  Δ_{\vK}^{γ γ'} =
-    - \sumKP \cc{v}_{\vK \vK'}^{γ γ'} \ev{c_{-\vK' γ'} c_{\vK' γ}},
+  Δ_{\vK}^{γ γ'}
+  = - \sumKP \cc{v}_{\vK \vK'}^{γ γ'} \ev{c_{-\vK' γ'} c_{\vK' γ}},
 \end{equation}
 and
-\begin{align}
+\begin{equation}
   ε_{γ γ'}
-    & = - \sumKK v_{\vK \vK'}^{γ γ'}
-        \ev{c_{\vK' γ}^† c_{-\vK' γ'}^†} \ev{c_{-\vK γ'} c_{\vK γ}}, \\
-    & = \sumK Δ_{\vK}^{γ γ'} \ev{c_{\vK γ}^† c_{-\vK γ'}^†}.
-\end{align}
-
+  = - \sumKK v_{\vK \vK'}^{γ γ'}
+    \ev{c_{\vK' γ}^† c_{-\vK' γ'}^†} \ev{c_{-\vK γ'} c_{\vK γ}}
+  = \sumK Δ_{\vK}^{γ γ'} \ev{c_{\vK γ}^† c_{-\vK γ'}^†}.
+\end{equation}
 Projected to a single superconducting channel, the Hamiltonian is
-\begin{multline}
-  \label{eq:intrinsic:projected:channel}
-  P_{γ γ'}^{-} \left( H^0 + H^V - μ N \right) = \\
-    ε_{γ γ'}
-    + \sumK \left(
-      ξ_{\vK} c_{\vK γ}^† c_{\vK γ}
+\begin{equation}
+  \begin{aligned}
+    \label{eq:intrinsic:projected:channel}
+    P_{γ γ'}^{-} \left( H^0 + H^V - μ N \right)
+      = ε_{γ γ'}
+    & + \sumK \left(
+        ξ_{\vK} c_{\vK γ}^† c_{\vK γ}
       + δ_{γ, -γ'} ξ_{\vK} c_{\vK γ'}^† c_{\vK γ'} % chktex 19
-    \right) \\
-    - \sumK \left(
-    \cc{Δ}_{\vK}^{γ γ'} c_{-\vK γ'} c_{\vK γ}
-    + Δ_{\vK}^{γ γ'} c_{\vK γ}^† c_{-\vK γ'}^†
-    \right).
-\end{multline}
+        \right) \\
+    & - \sumK \left(
+        \cc{Δ}_{\vK}^{γ γ'} c_{-\vK γ'} c_{\vK γ}
+      + Δ_{\vK}^{γ γ'} c_{\vK γ}^† c_{-\vK γ'}^†
+      \right).
+  \end{aligned}
+\end{equation}
 
 \section{Channel solutions}
 
@@ -298,7 +310,6 @@ where we suppress the channel and band indexes here and in the following
 when there is no ambiguity.
 The channels are further split according to angular momentum,
 and the individual channels and their weights are summarized below.
-
 The order parameter is
 \begin{equation}
   \label{eq:intrinsic:gap}
@@ -362,7 +373,6 @@ Note also the inverse,
       - e^{i δ_{\vK}} \cos{β_{\vK}} c_{-\vK γ'}.  % chktex 19
   \end{align}
 \end{subequations}
-
 With this, \Cref{eq:intrinsic:gap} becomes
 \begin{equation}
   \label{eq:intrinsic:gap:general}
@@ -408,9 +418,15 @@ and the density of states is
 \subsection{Vector channels}
 
 For the intervalley vector channels,
-$f_{\vK} = g_{\vK} = \sqrt{2} \sin{θ_{\vK} \vc{\hat{k}}}$
-and $χ_0 = \left( \abs{χ_0} / \sqrt{2} \right)
-\left( \hat{e}_1 + i \hat{e}_2 \right)$
+\begin{subequations}
+\begin{align}
+  f_{\vK}
+  & = g_{\vK} = \sqrt{2} \sin{θ_{\vK} \vc{\hat{k}}}, \\
+  χ_0
+  & = \left( \abs{χ_0} / \sqrt{2} \right) \left( \hat{e}_1
+    + i \hat{e}_2 \right),
+\end{align}
+\end{subequations}
 for some fixed unit vectors $\hat{e}_1$ and $\hat{e}_2$.
 We consider two cases:
 $\hat{e}_1 ∥ \hat{e}_2$ or $\hat{e}_1 ⊥ \hat{e}_2$.

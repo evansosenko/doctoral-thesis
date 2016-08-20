@@ -30,12 +30,11 @@ Application of the Baker–Campbell–Hausdorff formula gives
 \begin{subequations}
   \begin{align}
     T \of{\vc{r}} T_{\vK}
-      & = e^{- i \left( \vc{r} · \vc{P} + \vc{k} · \vc{Q} \right)
-          - \frac{1}{2} \left[ \vc{r} · \vc{P}, \vc{k} · \vc{Q} \right]}, \\
-    %
+    & = e^{- i \left( \vc{r} · \vc{P} + \vc{k} · \vc{Q} \right)
+      - \frac{1}{2} \left[ \vc{r} · \vc{P}, \vc{k} · \vc{Q} \right]}, \\
     T_{\vK} T \of{\vc{r}}
-      & = e^{- i \left( \vc{r} · \vc{P} + \vc{k} · \vc{Q} \right)
-          + \frac{1}{2} \left[ \vc{r} · \vc{P}, \vc{k} · \vc{Q} \right]}.
+    & = e^{- i \left( \vc{r} · \vc{P} + \vc{k} · \vc{Q} \right)
+      + \frac{1}{2} \left[ \vc{r} · \vc{P}, \vc{k} · \vc{Q} \right]}.
   \end{align}
 \end{subequations}
 Only a single commutator appears above since
@@ -56,9 +55,9 @@ we may choose a set of common eigenvectors according to Bloch's theorem,
 \begin{subequations}
   \begin{align}
     H \Ket{ψ_{n \vK}}
-      & = E_{n \vK} \Ket{ψ_{n \vK}}, \\
+    & = E_{n \vK} \Ket{ψ_{n \vK}}, \\
     T \of{\vRn{m}} \Ket{ψ_{n \vK}}
-      & = e^{-i \vK · \vRn{m}} \Ket{ψ_{n \vK}}.
+    & = e^{-i \vK · \vRn{m}} \Ket{ψ_{n \vK}}.
   \end{align}
 \end{subequations}
 Given periodic boundary conditions,
@@ -72,14 +71,12 @@ gives a set of states which are invariant under lattice translations, i.e.,
 using \cref{eq:translations:commutation},
 $T \of{\vRn{m}} \Ket{u_{n \vK}} = \Ket{u_{n \vK}}$.
 A general operator then transforms according to
-\begin{equation*}
-  A_{\vK} = T_{\vK} A T_{\vK}^{-1}.
-\end{equation*}
+$A_{\vK} = T_{\vK} A T_{\vK}^{-1}$.
 Note that the derivative of a transformed operator may be computed as
 \begin{equation}
   ∇_{\vK} A_{\vK}
-    = ∇_{\vK} \left( T_{\vK} A T_{\vK}^{-1} \right)
-    = i \left[ A_{\vK}, \vc{Q} \right].
+  = ∇_{\vK} \left( T_{\vK} A T_{\vK}^{-1} \right)
+  = i \left[ A_{\vK}, \vc{Q} \right].
 \end{equation}
 
 \section{Tight binding approximation}
@@ -106,7 +103,7 @@ The second overlap term in
 \begin{equation}
   \Braket{ϕ_{ν' \vK} | ϕ_{ν \vK}}
   = \Braket{φ_{ν'} | φ_ν}
-    + ∑_{\vRn{n} ≠ 0}^N e^{i \vK ⋅ \vRn{n}}
+  + ∑_{\vRn{n} ≠ 0}^N e^{i \vK ⋅ \vRn{n}}
     \Braket{φ_{ν'} | T \of{\vRn{n}} | φ_ν}
 \end{equation}
 is small, thus the states
