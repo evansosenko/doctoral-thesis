@@ -5,6 +5,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This change log follows the conventions of
 [keep a CHANGELOG](http://keepachangelog.com/).
 
-## [Unreleased][Unreleased]
+## 1.0.0
 
-[Unreleased]: https://github.com/makenew/libsass-package/compare/v0.0.0...HEAD
+- Initial release.

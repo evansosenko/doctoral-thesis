@@ -1,6 +1,6 @@
 {
   "name": "doctoral-thesis",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Spin and valley physics in two dimensional systems: Graphene and superconducting transition metal dichalcogenides.",
   "main": "tex/doctoral-thesis.tex",
   "authors": [
